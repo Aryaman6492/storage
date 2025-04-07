@@ -1,0 +1,3 @@
+FROM scratch
+COPY storage /storage
+ENTRYPOINT ["/storage"]
