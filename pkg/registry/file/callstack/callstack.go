@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/dghubble/trie"
-	types "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	types "github.com/kubescape/storage/pkg/apis/softwarecomposition"
 )
 
 // framesEqual checks if two StackFrames are equal

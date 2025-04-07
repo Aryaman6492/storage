@@ -11,9 +11,9 @@ import (
 	loggerhelpers "github.com/kubescape/go-logger/helpers"
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
 	"github.com/kubescape/k8s-interface/names"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
-	"github.com/Aryaman6492/storage/pkg/registry/file/callstack"
-	"github.com/Aryaman6492/storage/pkg/registry/file/dynamicpathdetector"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/registry/file/callstack"
+	"github.com/kubescape/storage/pkg/registry/file/dynamicpathdetector"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apiserver/pkg/storage"
 )
@@ -44,7 +44,7 @@ func NewApplicationProfileProcessor(defaultNamespace string) *ApplicationProfile
 
 var _ Processor = (*ApplicationProfileProcessor)(nil)
 
-func (a *ApplicationProfileProcessor) PreSave(ctx context.Context, object runtime.Object) error {
+func (a *ApplicationProfileProcessor) PreSave(object runtime.Object) error {
 	profile, ok := object.(*softwarecomposition.ApplicationProfile)
 	if !ok {
 		return fmt.Errorf("given object is not an ApplicationProfile")
@@ -62,7 +62,7 @@ func (a *ApplicationProfileProcessor) PreSave(ctx context.Context, object runtim
 			if err == nil {
 				sbom := softwarecomposition.SBOMSyft{}
 				key := fmt.Sprintf("/spdx.softwarecomposition.seclogic.io/sbomsyft/%s/%s", a.defaultNamespace, sbomName)
-				if err := a.storageImpl.Get(ctx, key, storage.GetOptions{}, &sbom); err == nil {
+				if err := a.storageImpl.Get(context.Background(), key, storage.GetOptions{}, &sbom); err == nil {
 					// fill sbomSet
 					sbomSet = mapset.NewSet[string]()
 					for _, f := range sbom.Spec.Syft.Files {

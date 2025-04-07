@@ -21,9 +21,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Aryaman6492/storage/pkg/admission/wardleinitializer"
-	"github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/fake"
-	informers "github.com/Aryaman6492/storage/pkg/generated/informers/externalversions"
+	"github.com/kubescape/storage/pkg/admission/wardleinitializer"
+	"github.com/kubescape/storage/pkg/generated/clientset/versioned/fake"
+	informers "github.com/kubescape/storage/pkg/generated/informers/externalversions"
 	"k8s.io/apiserver/pkg/admission"
 )
 

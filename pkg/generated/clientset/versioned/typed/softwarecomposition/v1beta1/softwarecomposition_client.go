@@ -21,8 +21,8 @@ package v1beta1
 import (
 	"net/http"
 
-	v1beta1 "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1"
-	"github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/scheme"
+	v1beta1 "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1"
+	"github.com/kubescape/storage/pkg/generated/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
@@ -34,6 +34,7 @@ type SpdxV1beta1Interface interface {
 	GeneratedNetworkPoliciesGetter
 	KnownServersGetter
 	NetworkNeighborhoodsGetter
+	NetworkNeighborsesGetter
 	OpenVulnerabilityExchangeContainersGetter
 	SBOMSyftsGetter
 	SBOMSyftFilteredsGetter
@@ -72,6 +73,10 @@ func (c *SpdxV1beta1Client) KnownServers(namespace string) KnownServerInterface 
 
 func (c *SpdxV1beta1Client) NetworkNeighborhoods(namespace string) NetworkNeighborhoodInterface {
 	return newNetworkNeighborhoods(c, namespace)
+}
+
+func (c *SpdxV1beta1Client) NetworkNeighborses(namespace string) NetworkNeighborsInterface {
+	return newNetworkNeighborses(c, namespace)
 }
 
 func (c *SpdxV1beta1Client) OpenVulnerabilityExchangeContainers(namespace string) OpenVulnerabilityExchangeContainerInterface {

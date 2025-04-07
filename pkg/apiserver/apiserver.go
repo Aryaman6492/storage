@@ -19,25 +19,27 @@ package apiserver
 import (
 	"os"
 
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/install"
-	"github.com/Aryaman6492/storage/pkg/registry"
-	sbomregistry "github.com/Aryaman6492/storage/pkg/registry"
-	"github.com/Aryaman6492/storage/pkg/registry/file"
-	"github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/applicationprofile"
-	"github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/configurationscansummary"
-	"github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/generatednetworkpolicy"
-	knownserver "github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/knownservers"
-	"github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/networkneighborhood"
-	"github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/openvulnerabilityexchange"
-	"github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/sbomsyftfiltereds"
-	"github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/sbomsyfts"
-	"github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/seccompprofiles"
-	vmstorage "github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/vulnerabilitymanifest"
-	vmsumstorage "github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/vulnerabilitymanifestsummary"
-	vsumstorage "github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/vulnerabilitysummary"
-	wcsstorage "github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/workloadconfigurationscans"
-	wcssumstorage "github.com/Aryaman6492/storage/pkg/registry/softwarecomposition/workloadconfigurationscansummary"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition/install"
+	"github.com/kubescape/storage/pkg/registry"
+	sbomregistry "github.com/kubescape/storage/pkg/registry"
+	"github.com/kubescape/storage/pkg/registry/file"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/applicationactivity"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/applicationprofile"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/configurationscansummary"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/generatednetworkpolicy"
+	knownserver "github.com/kubescape/storage/pkg/registry/softwarecomposition/knownservers"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/networkneighborhood"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/networkneighbors"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/openvulnerabilityexchange"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/sbomsyftfiltereds"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/sbomsyfts"
+	"github.com/kubescape/storage/pkg/registry/softwarecomposition/seccompprofiles"
+	vmstorage "github.com/kubescape/storage/pkg/registry/softwarecomposition/vulnerabilitymanifest"
+	vmsumstorage "github.com/kubescape/storage/pkg/registry/softwarecomposition/vulnerabilitymanifestsummary"
+	vsumstorage "github.com/kubescape/storage/pkg/registry/softwarecomposition/vulnerabilitysummary"
+	wcsstorage "github.com/kubescape/storage/pkg/registry/softwarecomposition/workloadconfigurationscans"
+	wcssumstorage "github.com/kubescape/storage/pkg/registry/softwarecomposition/workloadconfigurationscansummary"
 	"github.com/spf13/afero"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -82,10 +84,9 @@ func init() {
 
 // ExtraConfig holds custom apiserver config
 type ExtraConfig struct {
-	Namespace       string
-	OsFs            afero.Fs
-	Pool            *sqlitemigration.Pool
-	WatchDispatcher *file.WatchDispatcher
+	Namespace string
+	OsFs      afero.Fs
+	Pool      *sqlitemigration.Pool
 }
 
 // Config defines the config for the apiserver
@@ -144,10 +145,10 @@ func (c completedConfig) New() (*WardleServer, error) {
 	apiGroupInfo := genericapiserver.NewDefaultAPIGroupInfo(softwarecomposition.GroupName, Scheme, metav1.ParameterCodec, Codecs)
 
 	var (
-		storageImpl = file.NewStorageImpl(c.ExtraConfig.OsFs, file.DefaultStorageRoot, c.ExtraConfig.Pool, c.ExtraConfig.WatchDispatcher, Scheme)
+		storageImpl = file.NewStorageImpl(c.ExtraConfig.OsFs, file.DefaultStorageRoot, c.ExtraConfig.Pool, Scheme)
 
-		applicationProfileStorageImpl  = file.NewStorageImplWithCollector(c.ExtraConfig.OsFs, file.DefaultStorageRoot, c.ExtraConfig.Pool, c.ExtraConfig.WatchDispatcher, Scheme, file.NewApplicationProfileProcessor(c.ExtraConfig.Namespace))
-		networkNeighborhoodStorageImpl = file.NewStorageImplWithCollector(c.ExtraConfig.OsFs, file.DefaultStorageRoot, c.ExtraConfig.Pool, c.ExtraConfig.WatchDispatcher, Scheme, file.NewNetworkNeighborhoodProcessor())
+		applicationProfileStorageImpl  = file.NewStorageImplWithCollector(c.ExtraConfig.OsFs, file.DefaultStorageRoot, c.ExtraConfig.Pool, Scheme, file.NewApplicationProfileProcessor(c.ExtraConfig.Namespace))
+		networkNeighborhoodStorageImpl = file.NewStorageImplWithCollector(c.ExtraConfig.OsFs, file.DefaultStorageRoot, c.ExtraConfig.Pool, Scheme, file.NewNetworkNeighborhoodProcessor())
 		configScanStorageImpl          = file.NewConfigurationScanSummaryStorage(storageImpl)
 		vulnerabilitySummaryStorage    = file.NewVulnerabilitySummaryStorage(storageImpl)
 		generatedNetworkPolicyStorage  = file.NewGeneratedNetworkPolicyStorage(storageImpl)
@@ -162,11 +163,13 @@ func (c completedConfig) New() (*WardleServer, error) {
 		}
 	)
 	apiGroupInfo.VersionedResourcesStorageMap["v1beta1"] = map[string]rest.Storage{
+		"applicationactivities":               ep(applicationactivity.NewREST),
 		"applicationprofiles":                 ep(applicationprofile.NewREST, applicationProfileStorageImpl),
 		"configurationscansummaries":          ep(configurationscansummary.NewREST, configScanStorageImpl),
 		"generatednetworkpolicies":            ep(generatednetworkpolicy.NewREST, generatedNetworkPolicyStorage),
 		"knownservers":                        ep(knownserver.NewREST),
 		"networkneighborhoods":                ep(networkneighborhood.NewREST, networkNeighborhoodStorageImpl),
+		"networkneighborses":                  ep(networkneighbors.NewREST),
 		"openvulnerabilityexchangecontainers": ep(openvulnerabilityexchange.NewREST),
 		"sbomsyftfiltereds":                   ep(sbomsyftfiltereds.NewREST),
 		"sbomsyfts":                           ep(sbomsyfts.NewREST),

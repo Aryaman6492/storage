@@ -1,13 +1,12 @@
 package file
 
 import (
-	"context"
 	"fmt"
 	"strconv"
 	"testing"
 
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -125,7 +124,7 @@ func TestNetworkNeighborhoodProcessor_PreSave(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Setenv("MAX_NETWORK_NEIGHBORHOOD_SIZE", strconv.Itoa(tt.maxNetworkNeighborhoodSize))
 			a := NewNetworkNeighborhoodProcessor()
-			tt.wantErr(t, a.PreSave(context.TODO(), tt.object), fmt.Sprintf("PreSave(%v)", tt.object))
+			tt.wantErr(t, a.PreSave(tt.object), fmt.Sprintf("PreSave(%v)", tt.object))
 			assert.Equal(t, tt.want, tt.object)
 		})
 	}

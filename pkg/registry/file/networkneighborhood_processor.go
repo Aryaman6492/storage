@@ -1,7 +1,6 @@
 package file
 
 import (
-	"context"
 	"fmt"
 	"os"
 	"strconv"
@@ -10,7 +9,7 @@ import (
 	"github.com/kubescape/go-logger"
 	loggerhelpers "github.com/kubescape/go-logger/helpers"
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -35,7 +34,7 @@ func NewNetworkNeighborhoodProcessor() *NetworkNeighborhoodProcessor {
 
 var _ Processor = (*NetworkNeighborhoodProcessor)(nil)
 
-func (a NetworkNeighborhoodProcessor) PreSave(_ context.Context, object runtime.Object) error {
+func (a NetworkNeighborhoodProcessor) PreSave(object runtime.Object) error {
 	profile, ok := object.(*softwarecomposition.NetworkNeighborhood)
 	if !ok {
 		return fmt.Errorf("given object is not an NetworkNeighborhood")

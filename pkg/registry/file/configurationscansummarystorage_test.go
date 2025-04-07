@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1"
-	"github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/scheme"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1"
+	"github.com/kubescape/storage/pkg/generated/clientset/versioned/scheme"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -17,7 +17,7 @@ import (
 )
 
 func TestConfigurationScanSummaryStorage_Count(t *testing.T) {
-	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil, nil)
+	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil)
 	configScanSummaryStorage := NewConfigurationScanSummaryStorage(storageImpl)
 
 	count, err := configScanSummaryStorage.Count("random")
@@ -30,7 +30,7 @@ func TestConfigurationScanSummaryStorage_Count(t *testing.T) {
 }
 
 func TestConfigurationScanSummaryStorage_Create(t *testing.T) {
-	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil, nil)
+	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil)
 	configScanSummaryStorage := NewConfigurationScanSummaryStorage(storageImpl)
 
 	err := configScanSummaryStorage.Create(context.TODO(), "", nil, nil, 0)
@@ -41,7 +41,7 @@ func TestConfigurationScanSummaryStorage_Create(t *testing.T) {
 }
 
 func TestConfigurationScanSummaryStorage_Delete(t *testing.T) {
-	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil, nil)
+	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil)
 	configScanSummaryStorage := NewConfigurationScanSummaryStorage(storageImpl)
 
 	err := configScanSummaryStorage.Delete(context.TODO(), "", nil, nil, nil, nil)
@@ -52,7 +52,7 @@ func TestConfigurationScanSummaryStorage_Delete(t *testing.T) {
 }
 
 func TestConfigurationScanSummaryStorage_Watch(t *testing.T) {
-	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil, nil)
+	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil)
 	configScanSummaryStorage := NewConfigurationScanSummaryStorage(storageImpl)
 
 	_, err := configScanSummaryStorage.Watch(context.TODO(), "", storage.ListOptions{})
@@ -63,7 +63,7 @@ func TestConfigurationScanSummaryStorage_Watch(t *testing.T) {
 }
 
 func TestConfigurationScanSummaryStorage_GuaranteedUpdate(t *testing.T) {
-	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil, nil)
+	storageImpl := NewStorageImpl(afero.NewMemMapFs(), "", nil, nil)
 	configScanSummaryStorage := NewConfigurationScanSummaryStorage(storageImpl)
 
 	err := configScanSummaryStorage.GuaranteedUpdate(context.TODO(), "", nil, false, nil, nil, nil)
@@ -117,20 +117,18 @@ func TestConfigurationScanSummaryStorage_Get(t *testing.T) {
 	}(pool)
 	sch := scheme.Scheme
 	require.NoError(t, softwarecomposition.AddToScheme(sch))
-	realStorage := NewStorageImpl(afero.NewMemMapFs(), "/", pool, nil, sch)
+	realStorage := NewStorageImpl(afero.NewMemMapFs(), "/", pool, sch)
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			configScanSummaryStorage := NewConfigurationScanSummaryStorage(realStorage)
-			ctx, cancel := context.WithCancel(context.TODO())
-			defer cancel()
+
 			if tt.create {
 				wlObj := &softwarecomposition.WorkloadConfigurationScanSummary{}
-				err := realStorage.Create(ctx, "/spdx.softwarecomposition.seclogic.io/workloadconfigurationscansummaries/kubescape/toto", wlObj, nil, 0)
-				require.NoError(t, err)
+				_ = realStorage.Create(context.TODO(), "/spdx.softwarecomposition.seclogic.io/workloadconfigurationscansummaries/kubescape/toto", wlObj, nil, 0)
 			}
 
-			err := configScanSummaryStorage.Get(ctx, tt.args.key, tt.args.opts, tt.args.objPtr)
+			err := configScanSummaryStorage.Get(context.TODO(), tt.args.key, tt.args.opts, tt.args.objPtr)
 
 			if tt.expectedError != nil {
 				assert.EqualError(t, err, tt.expectedError.Error())
@@ -192,20 +190,18 @@ func TestConfigurationScanSummaryStorage_GetList(t *testing.T) {
 	}(pool)
 	sch := scheme.Scheme
 	require.NoError(t, softwarecomposition.AddToScheme(sch))
-	realStorage := NewStorageImpl(afero.NewMemMapFs(), "/", pool, nil, sch)
+	realStorage := NewStorageImpl(afero.NewMemMapFs(), "/", pool, sch)
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			configScanSummaryStorage := NewConfigurationScanSummaryStorage(realStorage)
-			ctx, cancel := context.WithCancel(context.TODO())
-			defer cancel()
+
 			if tt.create {
 				wlObj := &softwarecomposition.WorkloadConfigurationScanSummary{}
-				err := realStorage.Create(ctx, "/spdx.softwarecomposition.seclogic.io/workloadconfigurationscansummaries/kubescape/toto", wlObj, nil, 0)
-				require.NoError(t, err)
+				_ = realStorage.Create(context.TODO(), "/spdx.softwarecomposition.seclogic.io/workloadconfigurationscansummaries/kubescape/toto", wlObj, nil, 0)
 			}
 
-			err := configScanSummaryStorage.GetList(ctx, tt.args.key, tt.args.opts, tt.args.objPtr)
+			err := configScanSummaryStorage.GetList(context.TODO(), tt.args.key, tt.args.opts, tt.args.objPtr)
 
 			if tt.expectedError != nil {
 				assert.EqualError(t, err, tt.expectedError.Error())

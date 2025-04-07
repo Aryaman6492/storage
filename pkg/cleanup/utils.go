@@ -12,33 +12,16 @@ import (
 
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"
-	"github.com/Aryaman6492/storage/pkg/registry/file"
+	"github.com/kubescape/storage/pkg/registry/file"
 	"github.com/olvrng/ujson"
 	"github.com/spf13/afero"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/discovery"
 	"k8s.io/client-go/dynamic"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/homedir"
 )
-
-// PartialObjectMetadata is a generic representation of any object with ObjectMeta. It allows clients
-// to get access to a particular ObjectMeta schema without knowing the details of the version.
-type PartialObjectMetadata struct {
-	metav1.TypeMeta
-	metav1.ObjectMeta
-}
-
-var _ runtime.Object = (*PartialObjectMetadata)(nil)
-
-func (p PartialObjectMetadata) DeepCopyObject() runtime.Object {
-	return &PartialObjectMetadata{
-		TypeMeta:   p.TypeMeta,
-		ObjectMeta: *p.ObjectMeta.DeepCopy(),
-	}
-}
 
 func NewKubernetesClient() (dynamic.Interface, discovery.DiscoveryInterface, error) {
 	clusterConfig, err := getConfig()
@@ -57,20 +40,18 @@ func NewKubernetesClient() (dynamic.Interface, discovery.DiscoveryInterface, err
 	return dynClient, disco, nil
 }
 
-func (h *ResourcesCleanupHandler) deleteMetadata(path string) runtime.Object {
-	key := payloadPathToKey(path)
-	metaOut := &PartialObjectMetadata{}
+func (h *ResourcesCleanupHandler) deleteMetadata(path string) {
 	conn, err := h.pool.Take(context.Background())
 	if err != nil {
 		logger.L().Error("failed to take connection", helpers.Error(err))
-		return nil
+		return
 	}
-	err = file.DeleteMetadata(conn, key, metaOut)
-	h.pool.Put(conn)
+	defer h.pool.Put(conn)
+	key := payloadPathToKey(path)
+	err = file.DeleteMetadata(conn, key, nil)
 	if err != nil {
 		logger.L().Error("failed to delete metadata", helpers.Error(err))
 	}
-	return metaOut
 }
 
 func getConfig() (*rest.Config, error) {
@@ -179,13 +160,13 @@ func payloadPathToKey(path string) string {
 }
 
 func (h *ResourcesCleanupHandler) readMetadata(payloadFilePath string) (*metav1.ObjectMeta, error) {
-	key := payloadPathToKey(payloadFilePath)
 	conn, err := h.pool.Take(context.Background())
 	if err != nil {
 		return nil, fmt.Errorf("failed to take connection: %w", err)
 	}
+	defer h.pool.Put(conn)
+	key := payloadPathToKey(payloadFilePath)
 	metadataJSON, err := file.ReadMetadata(conn, key)
-	h.pool.Put(conn)
 	if err == nil {
 		metadata, err := loadMetadata(metadataJSON)
 		if err == nil {

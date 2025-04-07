@@ -1,15 +1,13 @@
 package file
 
 import (
-	"context"
-
 	mapset "github.com/deckarep/golang-set/v2"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 
 type Processor interface {
-	PreSave(ctx context.Context, object runtime.Object) error
+	PreSave(object runtime.Object) error
 	SetStorage(storageImpl *StorageImpl)
 }
 
@@ -18,7 +16,7 @@ type DefaultProcessor struct {
 
 var _ Processor = (*DefaultProcessor)(nil)
 
-func (d DefaultProcessor) PreSave(_ context.Context, _ runtime.Object) error {
+func (d DefaultProcessor) PreSave(_ runtime.Object) error {
 	return nil
 }
 

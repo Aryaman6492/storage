@@ -19,8 +19,8 @@ limitations under the License.
 package softwarecomposition
 
 import (
-	internalinterfaces "github.com/Aryaman6492/storage/pkg/generated/informers/externalversions/internalinterfaces"
-	v1beta1 "github.com/Aryaman6492/storage/pkg/generated/informers/externalversions/softwarecomposition/v1beta1"
+	internalinterfaces "github.com/kubescape/storage/pkg/generated/informers/externalversions/internalinterfaces"
+	v1beta1 "github.com/kubescape/storage/pkg/generated/informers/externalversions/softwarecomposition/v1beta1"
 )
 
 // Interface provides access to each of this group's versions.

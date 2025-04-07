@@ -1,9 +1,9 @@
 package networkpolicy
 
 import (
-	sc "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
-	np "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/networkpolicy/v2"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1"
+	sc "github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	np "github.com/kubescape/storage/pkg/apis/softwarecomposition/networkpolicy/v2"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

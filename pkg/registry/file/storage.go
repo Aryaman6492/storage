@@ -17,9 +17,9 @@ import (
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"
 	helpersv1 "github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1"
-	"github.com/Aryaman6492/storage/pkg/utils"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1"
+	"github.com/kubescape/storage/pkg/utils"
 	"github.com/spf13/afero"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
@@ -64,7 +64,7 @@ type StorageImpl struct {
 	root            string
 	scheme          *runtime.Scheme
 	versioner       storage.Versioner
-	watchDispatcher *WatchDispatcher
+	watchDispatcher *watchDispatcher
 }
 
 // StorageQuerier wraps the storage.Interface and adds some extra methods which are used by the storage implementation.
@@ -79,14 +79,11 @@ var _ storage.Interface = &StorageImpl{}
 
 var _ StorageQuerier = &StorageImpl{}
 
-func NewStorageImpl(appFs afero.Fs, root string, pool *sqlitemigration.Pool, watchDispatcher *WatchDispatcher, scheme *runtime.Scheme) StorageQuerier {
-	return NewStorageImplWithCollector(appFs, root, pool, watchDispatcher, scheme, DefaultProcessor{})
+func NewStorageImpl(appFs afero.Fs, root string, pool *sqlitemigration.Pool, scheme *runtime.Scheme) StorageQuerier {
+	return NewStorageImplWithCollector(appFs, root, pool, scheme, DefaultProcessor{})
 }
 
-func NewStorageImplWithCollector(appFs afero.Fs, root string, conn *sqlitemigration.Pool, watchDispatcher *WatchDispatcher, scheme *runtime.Scheme, processor Processor) StorageQuerier {
-	if watchDispatcher == nil {
-		watchDispatcher = NewWatchDispatcher()
-	}
+func NewStorageImplWithCollector(appFs afero.Fs, root string, conn *sqlitemigration.Pool, scheme *runtime.Scheme, processor Processor) StorageQuerier {
 	storageImpl := &StorageImpl{
 		appFs:           appFs,
 		pool:            conn,
@@ -95,7 +92,7 @@ func NewStorageImplWithCollector(appFs afero.Fs, root string, conn *sqlitemigrat
 		root:            root,
 		scheme:          scheme,
 		versioner:       storage.APIObjectVersioner{},
-		watchDispatcher: watchDispatcher,
+		watchDispatcher: newWatchDispatcher(),
 	}
 	processor.SetStorage(storageImpl)
 	return storageImpl
@@ -182,9 +179,8 @@ func (s *StorageImpl) writeFiles(key string, obj runtime.Object, metaOut runtime
 	if err != nil {
 		return fmt.Errorf("take connection: %w", err)
 	}
-	err = writeMetadata(conn, key, metadata)
-	s.pool.Put(conn)
-	if err != nil {
+	defer s.pool.Put(conn)
+	if err := writeMetadata(conn, key, metadata); err != nil {
 		return fmt.Errorf("write metadata: %w", err)
 	}
 	// eventually fill metaOut
@@ -209,10 +205,7 @@ func (s *StorageImpl) Create(ctx context.Context, key string, obj, metaOut runti
 	defer span.End()
 	_, spanLock := otel.Tracer("").Start(ctx, "waiting for lock")
 	beforeLock := time.Now()
-	err := s.locks.Lock(ctx, key)
-	if err != nil {
-		return apierrors.NewTimeoutError(fmt.Sprintf("lock: %v", err), 0)
-	}
+	s.locks.Lock(key)
 	defer s.locks.Unlock(key)
 	spanLock.End()
 	lockDuration := time.Since(beforeLock)
@@ -230,7 +223,7 @@ func (s *StorageImpl) Create(ctx context.Context, key string, obj, metaOut runti
 		return errors.New(msg)
 	}
 	// call processor on object to be saved
-	if err := s.processor.PreSave(ctx, obj); err != nil && !errors.Is(err, TooLargeObjectError) {
+	if err := s.processor.PreSave(obj); err != nil && !errors.Is(err, TooLargeObjectError) {
 		return fmt.Errorf("processor.PreSave: %w", err)
 	}
 	// write files
@@ -254,10 +247,7 @@ func (s *StorageImpl) Delete(ctx context.Context, key string, metaOut runtime.Ob
 	defer span.End()
 	_, spanLock := otel.Tracer("").Start(ctx, "waiting for lock")
 	beforeLock := time.Now()
-	err := s.locks.Lock(ctx, key)
-	if err != nil {
-		return apierrors.NewTimeoutError(fmt.Sprintf("lock: %v", err), 0)
-	}
+	s.locks.Lock(key)
 	defer s.locks.Unlock(key)
 	spanLock.End()
 	lockDuration := time.Since(beforeLock)
@@ -270,9 +260,8 @@ func (s *StorageImpl) Delete(ctx context.Context, key string, metaOut runtime.Ob
 	if err != nil {
 		return fmt.Errorf("take connection: %w", err)
 	}
-	err = DeleteMetadata(conn, key, metaOut)
-	s.pool.Put(conn)
-	if err != nil {
+	defer s.pool.Put(conn)
+	if err := DeleteMetadata(conn, key, metaOut); err != nil {
 		logger.L().Ctx(ctx).Error("Delete - delete metadata failed", helpers.Error(err), helpers.String("key", key))
 	}
 	// delete payload file
@@ -312,10 +301,7 @@ func (s *StorageImpl) Get(ctx context.Context, key string, opts storage.GetOptio
 	defer span.End()
 	_, spanLock := otel.Tracer("").Start(ctx, "waiting for lock")
 	beforeLock := time.Now()
-	err := s.locks.RLock(ctx, key)
-	if err != nil {
-		return apierrors.NewTimeoutError(fmt.Sprintf("rlock: %v", err), 0)
-	}
+	s.locks.RLock(key)
 	defer s.locks.RUnlock(key)
 	spanLock.End()
 	lockDuration := time.Since(beforeLock)
@@ -334,8 +320,8 @@ func (s *StorageImpl) get(ctx context.Context, key string, opts storage.GetOptio
 		if err != nil {
 			return fmt.Errorf("take connection: %w", err)
 		}
+		defer s.pool.Put(conn)
 		metadata, err := ReadMetadata(conn, key)
-		s.pool.Put(conn)
 		if err != nil {
 			return fmt.Errorf("read metadata: %w", err)
 		}
@@ -344,14 +330,6 @@ func (s *StorageImpl) get(ctx context.Context, key string, opts storage.GetOptio
 	payloadFile, err := s.appFs.OpenFile(makePayloadPath(p), syscall.O_DIRECT|os.O_RDONLY, 0)
 	if err != nil {
 		if errors.Is(err, afero.ErrFileNotFound) {
-			// file not found, delete corresponding metadata
-			conn, err := s.pool.Take(context.Background())
-			if err != nil {
-				return fmt.Errorf("take connection: %w", err)
-			}
-			_ = DeleteMetadata(conn, key, nil)
-			s.pool.Put(conn)
-			logger.L().Debug("Get - file not found, removed metadata", helpers.String("key", key))
 			if opts.IgnoreNotFound {
 				return runtime.SetZeroValue(objPtr)
 			} else {
@@ -373,8 +351,8 @@ func (s *StorageImpl) get(ctx context.Context, key string, opts storage.GetOptio
 			if err != nil {
 				return fmt.Errorf("take connection: %w", err)
 			}
+			defer s.pool.Put(conn)
 			_ = DeleteMetadata(conn, key, nil)
-			s.pool.Put(conn)
 			_ = s.appFs.Remove(makePayloadPath(p))
 			logger.L().Debug("Get - gob unexpected EOF, removed files", helpers.String("key", key))
 			if opts.IgnoreNotFound {
@@ -415,16 +393,16 @@ func (s *StorageImpl) GetList(ctx context.Context, key string, opts storage.List
 		opts.Predicate.Limit = 500
 	}
 	// prepare SQLite connection
-	conn, err := s.pool.Take(context.Background()) // TODO maybe use ctx here to have cancellation?
+	conn, err := s.pool.Take(context.Background())
 	if err != nil {
 		return fmt.Errorf("take connection: %w", err)
 	}
+	defer s.pool.Put(conn)
 	var list []string
 	var last string
 	if opts.ResourceVersion == softwarecomposition.ResourceVersionFullSpec {
 		// get names from SQLite
 		list, last, err = listKeys(conn, key, opts.Predicate.Continue, opts.Predicate.Limit)
-		s.pool.Put(conn)
 		if err != nil {
 			logger.L().Ctx(ctx).Error("GetList - list keys failed", helpers.Error(err), helpers.String("key", key))
 		}
@@ -440,7 +418,6 @@ func (s *StorageImpl) GetList(ctx context.Context, key string, opts storage.List
 	} else {
 		// get metadata from SQLite
 		list, last, err = listMetadata(conn, key, opts.Predicate.Continue, opts.Predicate.Limit)
-		s.pool.Put(conn)
 		if err != nil {
 			logger.L().Ctx(ctx).Error("GetList - list metadata failed", helpers.Error(err), helpers.String("key", key))
 		}
@@ -506,7 +483,7 @@ func (s *StorageImpl) getListWithSpec(ctx context.Context, key string, _ storage
 		})
 	}
 	for _, payloadFile := range payloadFiles {
-		if err := s.appendGobObjectFromFile(ctx, payloadFile, v); err != nil {
+		if err := s.appendGobObjectFromFile(payloadFile, v); err != nil {
 			logger.L().Ctx(ctx).Error("getListWithSpec - appending Gob object from file failed", helpers.Error(err), helpers.String("path", payloadFile))
 		}
 	}
@@ -580,11 +557,7 @@ func (s *StorageImpl) GuaranteedUpdate(
 	defer span.End()
 	_, spanLock := otel.Tracer("").Start(ctx, "waiting for lock")
 	beforeLock := time.Now()
-	err := s.locks.Lock(ctx, key)
-	if err != nil {
-		logger.L().Debug("GuaranteedUpdate - lock failed", helpers.Error(err), helpers.String("key", key))
-		return apierrors.NewTimeoutError(fmt.Sprintf("lock: %v", err), 0)
-	}
+	s.locks.Lock(key)
 	defer s.locks.Unlock(key)
 	spanLock.End()
 	lockDuration := time.Since(beforeLock)
@@ -662,7 +635,6 @@ func (s *StorageImpl) GuaranteedUpdate(
 				if !apierrors.IsNotFound(err) && !apierrors.IsInvalid(err) {
 					logger.L().Ctx(ctx).Error("GuaranteedUpdate - tryUpdate func failed", helpers.Error(err), helpers.String("key", key))
 				}
-				logger.L().Ctx(ctx).Debug("GuaranteedUpdate - tryUpdate func failed", helpers.Error(err), helpers.String("key", key))
 				return err
 			}
 
@@ -684,7 +656,6 @@ func (s *StorageImpl) GuaranteedUpdate(
 				if !apierrors.IsNotFound(err) && !apierrors.IsInvalid(err) {
 					logger.L().Ctx(ctx).Error("GuaranteedUpdate - tryUpdate func failed", helpers.Error(err), helpers.String("key", key))
 				}
-				logger.L().Ctx(ctx).Debug("GuaranteedUpdate - tryUpdate func failed", helpers.Error(err), helpers.String("key", key))
 				return cachedUpdateErr
 			}
 
@@ -693,7 +664,7 @@ func (s *StorageImpl) GuaranteedUpdate(
 		}
 
 		// call processor on object to be saved
-		if err := s.processor.PreSave(ctx, ret); err != nil {
+		if err := s.processor.PreSave(ret); err != nil {
 			if errors.Is(err, TooLargeObjectError) {
 				// revert spec
 				ret = origState.obj.DeepCopyObject() // FIXME this is expensive
@@ -703,16 +674,14 @@ func (s *StorageImpl) GuaranteedUpdate(
 				annotations[helpersv1.StatusMetadataKey] = helpersv1.TooLarge
 				metadata.SetAnnotations(annotations)
 				logger.L().Ctx(ctx).Debug("GuaranteedUpdate - too large object, skipping update", helpers.String("key", key))
-				// we don't return here as we still need to save the object with updated annotations
 			} else {
-				logger.L().Ctx(ctx).Debug("GuaranteedUpdate - processor.PreSave failed", helpers.Error(err), helpers.String("key", key))
 				return fmt.Errorf("processor.PreSave: %w", err)
 			}
 		}
 
 		// check if the object is the same as the original
 		orig := origState.obj.DeepCopyObject() // FIXME this is expensive
-		_ = s.processor.PreSave(ctx, orig)
+		_ = s.processor.PreSave(orig)
 		if reflect.DeepEqual(orig, ret) {
 			logger.L().Debug("GuaranteedUpdate - tryUpdate returned the same object, no update needed", helpers.String("key", key))
 			// no change, return the original object
@@ -721,13 +690,14 @@ func (s *StorageImpl) GuaranteedUpdate(
 		}
 
 		// save to disk and fill into metaOut
-		if err := s.writeFiles(key, ret, metaOut); err != nil {
+		err = s.writeFiles(key, ret, metaOut)
+		if err == nil {
+			// Only successful updates should produce modification events
+			s.watchDispatcher.Modified(key, metaOut, ret)
+		} else {
 			logger.L().Ctx(ctx).Error("GuaranteedUpdate - write files failed", helpers.Error(err), helpers.String("key", key))
-			return err
 		}
-		// Only successful updates should produce modification events
-		s.watchDispatcher.Modified(key, metaOut, ret)
-		return nil
+		return err
 	}
 }
 
@@ -771,12 +741,9 @@ func (s *StorageImpl) GetByCluster(ctx context.Context, apiVersion, kind string,
 }
 
 // appendGobObjectFromFile unmarshalls a Gob file into a runtime.Object and appends it to the underlying list object.
-func (s *StorageImpl) appendGobObjectFromFile(ctx context.Context, path string, v reflect.Value) error {
+func (s *StorageImpl) appendGobObjectFromFile(path string, v reflect.Value) error {
 	key := s.keyFromPath(path)
-	err := s.locks.RLock(ctx, key)
-	if err != nil {
-		return apierrors.NewTimeoutError(fmt.Sprintf("rlock: %v", err), 0)
-	}
+	s.locks.RLock(key)
 	defer s.locks.RUnlock(key)
 	payloadFile, err := s.appFs.OpenFile(path, syscall.O_DIRECT|os.O_RDONLY, 0)
 	if err != nil {

@@ -22,7 +22,7 @@ import (
 	"strings"
 
 	"github.com/containers/common/pkg/seccomp"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/consts"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition/consts"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 	corev1 "k8s.io/api/core/v1"

@@ -20,7 +20,7 @@ import (
 	"encoding/json"
 
 	"github.com/containers/common/pkg/seccomp"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/consts"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition/consts"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

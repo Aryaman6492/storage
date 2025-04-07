@@ -19,7 +19,7 @@ limitations under the License.
 package v1beta1
 
 import (
-	internalinterfaces "github.com/Aryaman6492/storage/pkg/generated/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/kubescape/storage/pkg/generated/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.
@@ -36,6 +36,8 @@ type Interface interface {
 	KnownServers() KnownServerInformer
 	// NetworkNeighborhoods returns a NetworkNeighborhoodInformer.
 	NetworkNeighborhoods() NetworkNeighborhoodInformer
+	// NetworkNeighborses returns a NetworkNeighborsInformer.
+	NetworkNeighborses() NetworkNeighborsInformer
 	// OpenVulnerabilityExchangeContainers returns a OpenVulnerabilityExchangeContainerInformer.
 	OpenVulnerabilityExchangeContainers() OpenVulnerabilityExchangeContainerInformer
 	// SBOMSyfts returns a SBOMSyftInformer.
@@ -95,6 +97,11 @@ func (v *version) KnownServers() KnownServerInformer {
 // NetworkNeighborhoods returns a NetworkNeighborhoodInformer.
 func (v *version) NetworkNeighborhoods() NetworkNeighborhoodInformer {
 	return &networkNeighborhoodInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// NetworkNeighborses returns a NetworkNeighborsInformer.
+func (v *version) NetworkNeighborses() NetworkNeighborsInformer {
+	return &networkNeighborsInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // OpenVulnerabilityExchangeContainers returns a OpenVulnerabilityExchangeContainerInformer.

@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1"
-	"github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/scheme"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1"
+	"github.com/kubescape/storage/pkg/generated/clientset/versioned/scheme"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -83,7 +83,7 @@ func TestFileSystemStorageWatchReturnsDistinctWatchers(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			s := NewStorageImpl(afero.NewMemMapFs(), DefaultStorageRoot, nil, nil, nil)
+			s := NewStorageImpl(afero.NewMemMapFs(), DefaultStorageRoot, nil, nil)
 
 			got1, _ := s.Watch(context.TODO(), tt.args.key, tt.args.opts)
 			got1chan := got1.ResultChan()
@@ -190,9 +190,8 @@ func TestFilesystemStorageWatchPublishing(t *testing.T) {
 			}(pool)
 			sch := scheme.Scheme
 			require.NoError(t, softwarecomposition.AddToScheme(sch))
-			s := NewStorageImpl(afero.NewMemMapFs(), DefaultStorageRoot, pool, nil, sch)
-			ctx, cancel := context.WithCancel(context.TODO())
-			defer cancel()
+			s := NewStorageImpl(afero.NewMemMapFs(), DefaultStorageRoot, pool, sch)
+			ctx := context.Background()
 			opts := storage.ListOptions{}
 
 			// Arrange watches
@@ -311,7 +310,7 @@ func TestWatchGuaranteedUpdateProducesMatchingEvents(t *testing.T) {
 			}(pool)
 			sch := scheme.Scheme
 			require.NoError(t, softwarecomposition.AddToScheme(sch))
-			s := NewStorageImpl(afero.NewMemMapFs(), DefaultStorageRoot, pool, nil, sch)
+			s := NewStorageImpl(afero.NewMemMapFs(), DefaultStorageRoot, pool, sch)
 			opts := storage.ListOptions{}
 
 			watchers := map[string][]watch.Interface{}
@@ -323,9 +322,7 @@ func TestWatchGuaranteedUpdateProducesMatchingEvents(t *testing.T) {
 			}
 
 			destination := &v1beta1.SBOMSyft{}
-			ctx, cancel := context.WithCancel(context.TODO())
-			defer cancel()
-			_ = s.GuaranteedUpdate(ctx, tc.args.key, destination, tc.args.ignoreNotFound, tc.args.preconditions, tc.args.tryUpdate, tc.args.cachedExistingObject)
+			_ = s.GuaranteedUpdate(context.TODO(), tc.args.key, destination, tc.args.ignoreNotFound, tc.args.preconditions, tc.args.tryUpdate, tc.args.cachedExistingObject)
 
 			for key, expectedEvents := range tc.expectedEvents {
 				var gotEvents []watch.Event

@@ -29,174 +29,177 @@ import (
 
 func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenAPIDefinition {
 	return map[string]common.OpenAPIDefinition{
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Advisory":                                   schema_pkg_apis_softwarecomposition_v1beta1_Advisory(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivity":                        schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivity(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivityList":                    schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivityList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivitySpec":                    schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivitySpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivityStatus":                  schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivityStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfile":                         schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfile(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer":                schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileList":                     schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileSpec":                     schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileStatus":                   schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Arg":                                        schema_pkg_apis_softwarecomposition_v1beta1_Arg(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CPE":                                        schema_pkg_apis_softwarecomposition_v1beta1_CPE(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CallStack":                                  schema_pkg_apis_softwarecomposition_v1beta1_CallStack(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode":                              schema_pkg_apis_softwarecomposition_v1beta1_CallStackNode(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Component":                                  schema_pkg_apis_softwarecomposition_v1beta1_Component(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Condition":                                  schema_pkg_apis_softwarecomposition_v1beta1_Condition(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ConditionedStatus":                          schema_pkg_apis_softwarecomposition_v1beta1_ConditionedStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummary":                   schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummary(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummaryList":               schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummaryList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummarySpec":               schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummarySpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity":                            schema_pkg_apis_softwarecomposition_v1beta1_ControlSeverity(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates":                                schema_pkg_apis_softwarecomposition_v1beta1_Coordinates(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Cvss":                                       schema_pkg_apis_softwarecomposition_v1beta1_Cvss(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CvssMetrics":                                schema_pkg_apis_softwarecomposition_v1beta1_CvssMetrics(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Descriptor":                                 schema_pkg_apis_softwarecomposition_v1beta1_Descriptor(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Digest":                                     schema_pkg_apis_softwarecomposition_v1beta1_Digest(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Distribution":                               schema_pkg_apis_softwarecomposition_v1beta1_Distribution(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ELFSecurityFeatures":                        schema_pkg_apis_softwarecomposition_v1beta1_ELFSecurityFeatures(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ExecCalls":                                  schema_pkg_apis_softwarecomposition_v1beta1_ExecCalls(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Executable":                                 schema_pkg_apis_softwarecomposition_v1beta1_Executable(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileLicense":                                schema_pkg_apis_softwarecomposition_v1beta1_FileLicense(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileLicenseEvidence":                        schema_pkg_apis_softwarecomposition_v1beta1_FileLicenseEvidence(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileMetadataEntry":                          schema_pkg_apis_softwarecomposition_v1beta1_FileMetadataEntry(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Fix":                                        schema_pkg_apis_softwarecomposition_v1beta1_Fix(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GeneratedNetworkPolicy":                     schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicy(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GeneratedNetworkPolicyList":                 schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicyList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GrypeDocument":                              schema_pkg_apis_softwarecomposition_v1beta1_GrypeDocument(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GrypePackage":                               schema_pkg_apis_softwarecomposition_v1beta1_GrypePackage(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPEndpoint":                               schema_pkg_apis_softwarecomposition_v1beta1_HTTPEndpoint(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressPath":                            schema_pkg_apis_softwarecomposition_v1beta1_HTTPIngressPath(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue":                       schema_pkg_apis_softwarecomposition_v1beta1_HTTPIngressRuleValue(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IPBlock":                                    schema_pkg_apis_softwarecomposition_v1beta1_IPBlock(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IdentifiedCallStack":                        schema_pkg_apis_softwarecomposition_v1beta1_IdentifiedCallStack(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRule":                                 schema_pkg_apis_softwarecomposition_v1beta1_IgnoreRule(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRulePackage":                          schema_pkg_apis_softwarecomposition_v1beta1_IgnoreRulePackage(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoredMatch":                               schema_pkg_apis_softwarecomposition_v1beta1_IgnoredMatch(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Ingress":                                    schema_pkg_apis_softwarecomposition_v1beta1_Ingress(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend":                             schema_pkg_apis_softwarecomposition_v1beta1_IngressBackend(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClass":                               schema_pkg_apis_softwarecomposition_v1beta1_IngressClass(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassList":                           schema_pkg_apis_softwarecomposition_v1beta1_IngressClassList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassParametersReference":            schema_pkg_apis_softwarecomposition_v1beta1_IngressClassParametersReference(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassSpec":                           schema_pkg_apis_softwarecomposition_v1beta1_IngressClassSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressList":                                schema_pkg_apis_softwarecomposition_v1beta1_IngressList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerIngress":                 schema_pkg_apis_softwarecomposition_v1beta1_IngressLoadBalancerIngress(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerStatus":                  schema_pkg_apis_softwarecomposition_v1beta1_IngressLoadBalancerStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressPortStatus":                          schema_pkg_apis_softwarecomposition_v1beta1_IngressPortStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressRule":                                schema_pkg_apis_softwarecomposition_v1beta1_IngressRule(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressRuleValue":                           schema_pkg_apis_softwarecomposition_v1beta1_IngressRuleValue(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressServiceBackend":                      schema_pkg_apis_softwarecomposition_v1beta1_IngressServiceBackend(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressSpec":                                schema_pkg_apis_softwarecomposition_v1beta1_IngressSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressStatus":                              schema_pkg_apis_softwarecomposition_v1beta1_IngressStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressTLS":                                 schema_pkg_apis_softwarecomposition_v1beta1_IngressTLS(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.KnownServer":                                schema_pkg_apis_softwarecomposition_v1beta1_KnownServer(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.KnownServerEntry":                           schema_pkg_apis_softwarecomposition_v1beta1_KnownServerEntry(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.KnownServerList":                            schema_pkg_apis_softwarecomposition_v1beta1_KnownServerList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.License":                                    schema_pkg_apis_softwarecomposition_v1beta1_License(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LinuxRelease":                               schema_pkg_apis_softwarecomposition_v1beta1_LinuxRelease(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Location":                                   schema_pkg_apis_softwarecomposition_v1beta1_Location(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LocationData":                               schema_pkg_apis_softwarecomposition_v1beta1_LocationData(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LocationMetadata":                           schema_pkg_apis_softwarecomposition_v1beta1_LocationMetadata(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Match":                                      schema_pkg_apis_softwarecomposition_v1beta1_Match(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.MatchDetails":                               schema_pkg_apis_softwarecomposition_v1beta1_MatchDetails(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Metadata":                                   schema_pkg_apis_softwarecomposition_v1beta1_Metadata(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor":                            schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighbor(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhood":                        schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhood(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer":               schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodContainer(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodList":                    schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodSpec":                    schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy":                              schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicy(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyEgressRule":                    schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyEgressRule(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyIngressRule":                   schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyIngressRule(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyList":                          schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer":                          schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyPeer(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort":                          schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyPort(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicySpec":                          schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicySpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyStatus":                        schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPort":                                schema_pkg_apis_softwarecomposition_v1beta1_NetworkPort(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.OpenCalls":                                  schema_pkg_apis_softwarecomposition_v1beta1_OpenCalls(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.OpenVulnerabilityExchangeContainer":         schema_pkg_apis_softwarecomposition_v1beta1_OpenVulnerabilityExchangeContainer(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.OpenVulnerabilityExchangeContainerList":     schema_pkg_apis_softwarecomposition_v1beta1_OpenVulnerabilityExchangeContainerList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PackageBasicData":                           schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicData(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PackageBasicDataV01011":                     schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicDataV01011(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PackageCustomData":                          schema_pkg_apis_softwarecomposition_v1beta1_PackageCustomData(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PolicyRef":                                  schema_pkg_apis_softwarecomposition_v1beta1_PolicyRef(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Product":                                    schema_pkg_apis_softwarecomposition_v1beta1_Product(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ReportMeta":                                 schema_pkg_apis_softwarecomposition_v1beta1_ReportMeta(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RulePath":                                   schema_pkg_apis_softwarecomposition_v1beta1_RulePath(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RulePolicy":                                 schema_pkg_apis_softwarecomposition_v1beta1_RulePolicy(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RuleStatus":                                 schema_pkg_apis_softwarecomposition_v1beta1_RuleStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyft":                                   schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyft(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftFiltered":                           schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftFiltered(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftFilteredList":                       schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftFilteredList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftList":                               schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec":                               schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus":                             schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SPDXMeta":                                   schema_pkg_apis_softwarecomposition_v1beta1_SPDXMeta(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControl":                             schema_pkg_apis_softwarecomposition_v1beta1_ScannedControl(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlRule":                         schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlRule(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus":                       schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlSummary":                      schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlSummary(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Schema":                                     schema_pkg_apis_softwarecomposition_v1beta1_Schema(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfile":                             schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfile(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileList":                         schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileSpec":                         schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileStatus":                       schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ServiceBackendPort":                         schema_pkg_apis_softwarecomposition_v1beta1_ServiceBackendPort(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary":                            schema_pkg_apis_softwarecomposition_v1beta1_SeveritySummary(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile":                       schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfile(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileSpec":                   schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfileSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileStatus":                 schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfileStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Source":                                     schema_pkg_apis_softwarecomposition_v1beta1_Source(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SpecBase":                                   schema_pkg_apis_softwarecomposition_v1beta1_SpecBase(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.StackFrame":                                 schema_pkg_apis_softwarecomposition_v1beta1_StackFrame(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Statement":                                  schema_pkg_apis_softwarecomposition_v1beta1_Statement(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.StatusBase":                                 schema_pkg_apis_softwarecomposition_v1beta1_StatusBase(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Subcomponent":                               schema_pkg_apis_softwarecomposition_v1beta1_Subcomponent(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftCoordinates":                            schema_pkg_apis_softwarecomposition_v1beta1_SyftCoordinates(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftDescriptor":                             schema_pkg_apis_softwarecomposition_v1beta1_SyftDescriptor(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftDocument":                               schema_pkg_apis_softwarecomposition_v1beta1_SyftDocument(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftFile":                                   schema_pkg_apis_softwarecomposition_v1beta1_SyftFile(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftPackage":                                schema_pkg_apis_softwarecomposition_v1beta1_SyftPackage(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftRelationship":                           schema_pkg_apis_softwarecomposition_v1beta1_SyftRelationship(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftSource":                                 schema_pkg_apis_softwarecomposition_v1beta1_SyftSource(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Syscall":                                    schema_pkg_apis_softwarecomposition_v1beta1_Syscall(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ToolMeta":                                   schema_pkg_apis_softwarecomposition_v1beta1_ToolMeta(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.UpstreamPackage":                            schema_pkg_apis_softwarecomposition_v1beta1_UpstreamPackage(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VEX":                                        schema_pkg_apis_softwarecomposition_v1beta1_VEX(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VexVulnerability":                           schema_pkg_apis_softwarecomposition_v1beta1_VexVulnerability(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesComponents":                  schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitiesComponents(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope":                    schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitiesObjScope(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Vulnerability":                              schema_pkg_apis_softwarecomposition_v1beta1_Vulnerability(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters":                      schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityCounters(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifest":                      schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifest(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestList":                  schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestMeta":                  schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestMeta(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestReportMeta":            schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestReportMeta(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSpec":                  schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus":                schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummary":               schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummary(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummaryList":           schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummaryList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummarySpec":           schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummarySpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestToolMeta":              schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestToolMeta(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata":                      schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityMetadata(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummary":                       schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummary(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummaryList":                   schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummaryList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummarySpec":                   schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummarySpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummaryStatus":                 schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummaryStatus(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScan":                  schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScan(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanList":              schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary": schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSeveritiesSummary(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSpec":              schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummary":           schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummary(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummaryIdentifier": schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummaryIdentifier(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummaryList":       schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummaryList(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummarySpec":       schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummarySpec(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadScanRelatedObject":                  schema_pkg_apis_softwarecomposition_v1beta1_WorkloadScanRelatedObject(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.packageMetadataUnpacker":                    schema_pkg_apis_softwarecomposition_v1beta1_packageMetadataUnpacker(ref),
-		"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.sourceUnpacker":                             schema_pkg_apis_softwarecomposition_v1beta1_sourceUnpacker(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Advisory":                                   schema_pkg_apis_softwarecomposition_v1beta1_Advisory(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivity":                        schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivity(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivityList":                    schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivityList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivitySpec":                    schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivitySpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivityStatus":                  schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivityStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfile":                         schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfile(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer":                schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileList":                     schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileSpec":                     schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileStatus":                   schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Arg":                                        schema_pkg_apis_softwarecomposition_v1beta1_Arg(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CPE":                                        schema_pkg_apis_softwarecomposition_v1beta1_CPE(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CallStack":                                  schema_pkg_apis_softwarecomposition_v1beta1_CallStack(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode":                              schema_pkg_apis_softwarecomposition_v1beta1_CallStackNode(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Component":                                  schema_pkg_apis_softwarecomposition_v1beta1_Component(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Condition":                                  schema_pkg_apis_softwarecomposition_v1beta1_Condition(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ConditionedStatus":                          schema_pkg_apis_softwarecomposition_v1beta1_ConditionedStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummary":                   schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummary(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummaryList":               schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummaryList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummarySpec":               schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummarySpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity":                            schema_pkg_apis_softwarecomposition_v1beta1_ControlSeverity(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates":                                schema_pkg_apis_softwarecomposition_v1beta1_Coordinates(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Cvss":                                       schema_pkg_apis_softwarecomposition_v1beta1_Cvss(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CvssMetrics":                                schema_pkg_apis_softwarecomposition_v1beta1_CvssMetrics(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Descriptor":                                 schema_pkg_apis_softwarecomposition_v1beta1_Descriptor(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Digest":                                     schema_pkg_apis_softwarecomposition_v1beta1_Digest(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Distribution":                               schema_pkg_apis_softwarecomposition_v1beta1_Distribution(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ELFSecurityFeatures":                        schema_pkg_apis_softwarecomposition_v1beta1_ELFSecurityFeatures(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ExecCalls":                                  schema_pkg_apis_softwarecomposition_v1beta1_ExecCalls(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Executable":                                 schema_pkg_apis_softwarecomposition_v1beta1_Executable(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileLicense":                                schema_pkg_apis_softwarecomposition_v1beta1_FileLicense(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileLicenseEvidence":                        schema_pkg_apis_softwarecomposition_v1beta1_FileLicenseEvidence(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileMetadataEntry":                          schema_pkg_apis_softwarecomposition_v1beta1_FileMetadataEntry(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Fix":                                        schema_pkg_apis_softwarecomposition_v1beta1_Fix(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GeneratedNetworkPolicy":                     schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicy(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GeneratedNetworkPolicyList":                 schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicyList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GrypeDocument":                              schema_pkg_apis_softwarecomposition_v1beta1_GrypeDocument(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GrypePackage":                               schema_pkg_apis_softwarecomposition_v1beta1_GrypePackage(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPEndpoint":                               schema_pkg_apis_softwarecomposition_v1beta1_HTTPEndpoint(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressPath":                            schema_pkg_apis_softwarecomposition_v1beta1_HTTPIngressPath(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue":                       schema_pkg_apis_softwarecomposition_v1beta1_HTTPIngressRuleValue(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IPBlock":                                    schema_pkg_apis_softwarecomposition_v1beta1_IPBlock(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IdentifiedCallStack":                        schema_pkg_apis_softwarecomposition_v1beta1_IdentifiedCallStack(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRule":                                 schema_pkg_apis_softwarecomposition_v1beta1_IgnoreRule(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRulePackage":                          schema_pkg_apis_softwarecomposition_v1beta1_IgnoreRulePackage(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoredMatch":                               schema_pkg_apis_softwarecomposition_v1beta1_IgnoredMatch(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Ingress":                                    schema_pkg_apis_softwarecomposition_v1beta1_Ingress(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend":                             schema_pkg_apis_softwarecomposition_v1beta1_IngressBackend(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClass":                               schema_pkg_apis_softwarecomposition_v1beta1_IngressClass(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassList":                           schema_pkg_apis_softwarecomposition_v1beta1_IngressClassList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassParametersReference":            schema_pkg_apis_softwarecomposition_v1beta1_IngressClassParametersReference(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassSpec":                           schema_pkg_apis_softwarecomposition_v1beta1_IngressClassSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressList":                                schema_pkg_apis_softwarecomposition_v1beta1_IngressList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerIngress":                 schema_pkg_apis_softwarecomposition_v1beta1_IngressLoadBalancerIngress(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerStatus":                  schema_pkg_apis_softwarecomposition_v1beta1_IngressLoadBalancerStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressPortStatus":                          schema_pkg_apis_softwarecomposition_v1beta1_IngressPortStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressRule":                                schema_pkg_apis_softwarecomposition_v1beta1_IngressRule(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressRuleValue":                           schema_pkg_apis_softwarecomposition_v1beta1_IngressRuleValue(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressServiceBackend":                      schema_pkg_apis_softwarecomposition_v1beta1_IngressServiceBackend(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressSpec":                                schema_pkg_apis_softwarecomposition_v1beta1_IngressSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressStatus":                              schema_pkg_apis_softwarecomposition_v1beta1_IngressStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressTLS":                                 schema_pkg_apis_softwarecomposition_v1beta1_IngressTLS(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.KnownServer":                                schema_pkg_apis_softwarecomposition_v1beta1_KnownServer(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.KnownServerEntry":                           schema_pkg_apis_softwarecomposition_v1beta1_KnownServerEntry(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.KnownServerList":                            schema_pkg_apis_softwarecomposition_v1beta1_KnownServerList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.License":                                    schema_pkg_apis_softwarecomposition_v1beta1_License(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LinuxRelease":                               schema_pkg_apis_softwarecomposition_v1beta1_LinuxRelease(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Location":                                   schema_pkg_apis_softwarecomposition_v1beta1_Location(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LocationData":                               schema_pkg_apis_softwarecomposition_v1beta1_LocationData(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LocationMetadata":                           schema_pkg_apis_softwarecomposition_v1beta1_LocationMetadata(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Match":                                      schema_pkg_apis_softwarecomposition_v1beta1_Match(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.MatchDetails":                               schema_pkg_apis_softwarecomposition_v1beta1_MatchDetails(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Metadata":                                   schema_pkg_apis_softwarecomposition_v1beta1_Metadata(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor":                            schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighbor(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhood":                        schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhood(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer":               schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodContainer(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodList":                    schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodSpec":                    schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbors":                           schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighbors(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborsList":                       schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborsList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborsSpec":                       schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborsSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy":                              schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicy(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyEgressRule":                    schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyEgressRule(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyIngressRule":                   schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyIngressRule(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyList":                          schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer":                          schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyPeer(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort":                          schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyPort(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicySpec":                          schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicySpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyStatus":                        schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPort":                                schema_pkg_apis_softwarecomposition_v1beta1_NetworkPort(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.OpenCalls":                                  schema_pkg_apis_softwarecomposition_v1beta1_OpenCalls(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.OpenVulnerabilityExchangeContainer":         schema_pkg_apis_softwarecomposition_v1beta1_OpenVulnerabilityExchangeContainer(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.OpenVulnerabilityExchangeContainerList":     schema_pkg_apis_softwarecomposition_v1beta1_OpenVulnerabilityExchangeContainerList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PackageBasicData":                           schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicData(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PackageBasicDataV01011":                     schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicDataV01011(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PackageCustomData":                          schema_pkg_apis_softwarecomposition_v1beta1_PackageCustomData(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PolicyRef":                                  schema_pkg_apis_softwarecomposition_v1beta1_PolicyRef(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Product":                                    schema_pkg_apis_softwarecomposition_v1beta1_Product(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ReportMeta":                                 schema_pkg_apis_softwarecomposition_v1beta1_ReportMeta(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RulePath":                                   schema_pkg_apis_softwarecomposition_v1beta1_RulePath(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RulePolicy":                                 schema_pkg_apis_softwarecomposition_v1beta1_RulePolicy(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RuleStatus":                                 schema_pkg_apis_softwarecomposition_v1beta1_RuleStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyft":                                   schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyft(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftFiltered":                           schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftFiltered(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftFilteredList":                       schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftFilteredList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftList":                               schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec":                               schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus":                             schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SPDXMeta":                                   schema_pkg_apis_softwarecomposition_v1beta1_SPDXMeta(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControl":                             schema_pkg_apis_softwarecomposition_v1beta1_ScannedControl(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlRule":                         schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlRule(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus":                       schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlSummary":                      schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlSummary(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Schema":                                     schema_pkg_apis_softwarecomposition_v1beta1_Schema(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfile":                             schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfile(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileList":                         schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileSpec":                         schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileStatus":                       schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ServiceBackendPort":                         schema_pkg_apis_softwarecomposition_v1beta1_ServiceBackendPort(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary":                            schema_pkg_apis_softwarecomposition_v1beta1_SeveritySummary(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile":                       schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfile(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileSpec":                   schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfileSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileStatus":                 schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfileStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Source":                                     schema_pkg_apis_softwarecomposition_v1beta1_Source(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SpecBase":                                   schema_pkg_apis_softwarecomposition_v1beta1_SpecBase(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.StackFrame":                                 schema_pkg_apis_softwarecomposition_v1beta1_StackFrame(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Statement":                                  schema_pkg_apis_softwarecomposition_v1beta1_Statement(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.StatusBase":                                 schema_pkg_apis_softwarecomposition_v1beta1_StatusBase(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Subcomponent":                               schema_pkg_apis_softwarecomposition_v1beta1_Subcomponent(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftCoordinates":                            schema_pkg_apis_softwarecomposition_v1beta1_SyftCoordinates(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftDescriptor":                             schema_pkg_apis_softwarecomposition_v1beta1_SyftDescriptor(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftDocument":                               schema_pkg_apis_softwarecomposition_v1beta1_SyftDocument(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftFile":                                   schema_pkg_apis_softwarecomposition_v1beta1_SyftFile(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftPackage":                                schema_pkg_apis_softwarecomposition_v1beta1_SyftPackage(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftRelationship":                           schema_pkg_apis_softwarecomposition_v1beta1_SyftRelationship(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftSource":                                 schema_pkg_apis_softwarecomposition_v1beta1_SyftSource(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Syscall":                                    schema_pkg_apis_softwarecomposition_v1beta1_Syscall(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ToolMeta":                                   schema_pkg_apis_softwarecomposition_v1beta1_ToolMeta(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.UpstreamPackage":                            schema_pkg_apis_softwarecomposition_v1beta1_UpstreamPackage(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VEX":                                        schema_pkg_apis_softwarecomposition_v1beta1_VEX(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VexVulnerability":                           schema_pkg_apis_softwarecomposition_v1beta1_VexVulnerability(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesComponents":                  schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitiesComponents(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope":                    schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitiesObjScope(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Vulnerability":                              schema_pkg_apis_softwarecomposition_v1beta1_Vulnerability(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters":                      schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityCounters(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifest":                      schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifest(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestList":                  schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestMeta":                  schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestMeta(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestReportMeta":            schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestReportMeta(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSpec":                  schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus":                schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummary":               schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummary(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummaryList":           schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummaryList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummarySpec":           schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummarySpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestToolMeta":              schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestToolMeta(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata":                      schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityMetadata(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummary":                       schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummary(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummaryList":                   schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummaryList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummarySpec":                   schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummarySpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummaryStatus":                 schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummaryStatus(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScan":                  schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScan(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanList":              schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary": schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSeveritiesSummary(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSpec":              schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummary":           schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummary(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummaryIdentifier": schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummaryIdentifier(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummaryList":       schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummaryList(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummarySpec":       schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummarySpec(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadScanRelatedObject":                  schema_pkg_apis_softwarecomposition_v1beta1_WorkloadScanRelatedObject(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.packageMetadataUnpacker":                    schema_pkg_apis_softwarecomposition_v1beta1_packageMetadataUnpacker(ref),
+		"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.sourceUnpacker":                             schema_pkg_apis_softwarecomposition_v1beta1_sourceUnpacker(ref),
 		"k8s.io/apimachinery/pkg/apis/meta/v1.APIGroup":                                                                schema_pkg_apis_meta_v1_APIGroup(ref),
 		"k8s.io/apimachinery/pkg/apis/meta/v1.APIGroupList":                                                            schema_pkg_apis_meta_v1_APIGroupList(ref),
 		"k8s.io/apimachinery/pkg/apis/meta/v1.APIResource":                                                             schema_pkg_apis_meta_v1_APIResource(ref),
@@ -308,20 +311,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivity(ref common.
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivitySpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivitySpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivityStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivityStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivitySpec", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivityStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivitySpec", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivityStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -358,7 +361,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivityList(ref com
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivity"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivity"),
 									},
 								},
 							},
@@ -369,7 +372,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationActivityList(ref com
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivity", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationActivity", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -438,20 +441,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfile(ref common.R
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileSpec", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileSpec", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -494,7 +497,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ExecCalls"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ExecCalls"),
 									},
 								},
 							},
@@ -513,7 +516,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.OpenCalls"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.OpenCalls"),
 									},
 								},
 							},
@@ -536,7 +539,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref
 					"seccompProfile": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"),
 						},
 					},
 					"endpoints": {
@@ -552,7 +555,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPEndpoint"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPEndpoint"),
 									},
 								},
 							},
@@ -586,7 +589,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RulePolicy"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RulePolicy"),
 									},
 								},
 							},
@@ -599,7 +602,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IdentifiedCallStack"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IdentifiedCallStack"),
 									},
 								},
 							},
@@ -610,7 +613,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileContainer(ref
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ExecCalls", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPEndpoint", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IdentifiedCallStack", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.OpenCalls", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RulePolicy", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ExecCalls", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPEndpoint", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IdentifiedCallStack", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.OpenCalls", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RulePolicy", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"},
 	}
 }
 
@@ -647,7 +650,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileList(ref comm
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfile"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfile"),
 									},
 								},
 							},
@@ -658,7 +661,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileList(ref comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfile", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfile", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -695,7 +698,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileSpec(ref comm
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer"),
 									},
 								},
 							},
@@ -714,7 +717,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileSpec(ref comm
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer"),
 									},
 								},
 							},
@@ -733,7 +736,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileSpec(ref comm
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer"),
 									},
 								},
 							},
@@ -744,7 +747,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ApplicationProfileSpec(ref comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ApplicationProfileContainer"},
 	}
 }
 
@@ -837,7 +840,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_CallStack(ref common.ReferenceC
 					"root": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode"),
 						},
 					},
 				},
@@ -845,7 +848,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_CallStack(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode"},
 	}
 }
 
@@ -862,7 +865,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_CallStackNode(ref common.Refere
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode"),
 									},
 								},
 							},
@@ -871,7 +874,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_CallStackNode(ref common.Refere
 					"frame": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.StackFrame"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.StackFrame"),
 						},
 					},
 				},
@@ -879,7 +882,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_CallStackNode(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.StackFrame"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CallStackNode", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.StackFrame"},
 	}
 }
 
@@ -1007,7 +1010,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConditionedStatus(ref common.Re
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Condition"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Condition"),
 									},
 								},
 							},
@@ -1017,7 +1020,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConditionedStatus(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Condition"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Condition"},
 	}
 }
 
@@ -1051,7 +1054,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummary(ref co
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummarySpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummarySpec"),
 						},
 					},
 				},
@@ -1059,7 +1062,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummary(ref co
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummarySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummarySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1097,7 +1100,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummaryList(re
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummary"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummary"),
 									},
 								},
 							},
@@ -1108,7 +1111,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummaryList(re
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummary", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ConfigurationScanSummary", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -1121,7 +1124,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummarySpec(re
 					"severities": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary"),
 						},
 					},
 					"summaryRef": {
@@ -1131,7 +1134,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummarySpec(re
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummaryIdentifier"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummaryIdentifier"),
 									},
 								},
 							},
@@ -1142,7 +1145,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ConfigurationScanSummarySpec(re
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummaryIdentifier"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummaryIdentifier"},
 	}
 }
 
@@ -1224,7 +1227,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Cvss(ref common.ReferenceCallba
 					"metrics": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CvssMetrics"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CvssMetrics"),
 						},
 					},
 					"vendorMetadata": {
@@ -1238,7 +1241,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Cvss(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CvssMetrics"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CvssMetrics"},
 	}
 }
 
@@ -1546,7 +1549,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Executable(ref common.Reference
 					},
 					"elfSecurityFeatures": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ELFSecurityFeatures"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ELFSecurityFeatures"),
 						},
 					},
 				},
@@ -1554,7 +1557,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Executable(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ELFSecurityFeatures"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ELFSecurityFeatures"},
 	}
 }
 
@@ -1587,7 +1590,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_FileLicense(ref common.Referenc
 					},
 					"evidence": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileLicenseEvidence"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileLicenseEvidence"),
 						},
 					},
 				},
@@ -1595,7 +1598,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_FileLicense(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileLicenseEvidence"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileLicenseEvidence"},
 	}
 }
 
@@ -1758,7 +1761,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicy(ref comm
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy"),
 						},
 					},
 					"policyRef": {
@@ -1768,7 +1771,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicy(ref comm
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PolicyRef"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PolicyRef"),
 									},
 								},
 							},
@@ -1779,7 +1782,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicy(ref comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PolicyRef", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PolicyRef", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1817,7 +1820,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicyList(ref 
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GeneratedNetworkPolicy"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GeneratedNetworkPolicy"),
 									},
 								},
 							},
@@ -1828,7 +1831,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GeneratedNetworkPolicyList(ref 
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GeneratedNetworkPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GeneratedNetworkPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -1846,7 +1849,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GrypeDocument(ref common.Refere
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Match"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Match"),
 									},
 								},
 							},
@@ -1859,7 +1862,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GrypeDocument(ref common.Refere
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoredMatch"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoredMatch"),
 									},
 								},
 							},
@@ -1867,19 +1870,19 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GrypeDocument(ref common.Refere
 					},
 					"source": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Source"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Source"),
 						},
 					},
 					"distro": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Distribution"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Distribution"),
 						},
 					},
 					"descriptor": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Descriptor"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Descriptor"),
 						},
 					},
 				},
@@ -1887,7 +1890,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GrypeDocument(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Descriptor", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Distribution", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoredMatch", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Match", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Source"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Descriptor", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Distribution", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoredMatch", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Match", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Source"},
 	}
 }
 
@@ -1925,7 +1928,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GrypePackage(ref common.Referen
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftCoordinates"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftCoordinates"),
 									},
 								},
 							},
@@ -1980,7 +1983,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GrypePackage(ref common.Referen
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.UpstreamPackage"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.UpstreamPackage"),
 									},
 								},
 							},
@@ -2003,7 +2006,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_GrypePackage(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftCoordinates", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.UpstreamPackage"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftCoordinates", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.UpstreamPackage"},
 	}
 }
 
@@ -2084,7 +2087,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_HTTPIngressPath(ref common.Refe
 						SchemaProps: spec.SchemaProps{
 							Description: "backend defines the referenced service endpoint to which the traffic will be forwarded to.",
 							Default:     map[string]interface{}{},
-							Ref:         ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend"),
+							Ref:         ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend"),
 						},
 					},
 				},
@@ -2092,7 +2095,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_HTTPIngressPath(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend"},
 	}
 }
 
@@ -2116,7 +2119,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_HTTPIngressRuleValue(ref common
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressPath"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressPath"),
 									},
 								},
 							},
@@ -2127,7 +2130,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_HTTPIngressRuleValue(ref common
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressPath"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressPath"},
 	}
 }
 
@@ -2183,7 +2186,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IdentifiedCallStack(ref common.
 					"callStack": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CallStack"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CallStack"),
 						},
 					},
 				},
@@ -2191,7 +2194,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IdentifiedCallStack(ref common.
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CallStack"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CallStack"},
 	}
 }
 
@@ -2215,14 +2218,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IgnoreRule(ref common.Reference
 					},
 					"package": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRulePackage"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRulePackage"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRulePackage"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRulePackage"},
 	}
 }
 
@@ -2277,7 +2280,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IgnoredMatch(ref common.Referen
 					"Match": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Match"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Match"),
 						},
 					},
 					"appliedIgnoreRules": {
@@ -2287,7 +2290,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IgnoredMatch(ref common.Referen
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRule"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRule"),
 									},
 								},
 							},
@@ -2298,7 +2301,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IgnoredMatch(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRule", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Match"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IgnoreRule", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Match"},
 	}
 }
 
@@ -2332,20 +2335,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Ingress(ref common.ReferenceCal
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressSpec", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressSpec", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -2358,7 +2361,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressBackend(ref common.Refer
 				Properties: map[string]spec.Schema{
 					"service": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressServiceBackend"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressServiceBackend"),
 						},
 					},
 					"resource": {
@@ -2370,7 +2373,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressBackend(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressServiceBackend", "k8s.io/api/core/v1.TypedLocalObjectReference"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressServiceBackend", "k8s.io/api/core/v1.TypedLocalObjectReference"},
 	}
 }
 
@@ -2404,14 +2407,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressClass(ref common.Referen
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassSpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -2450,7 +2453,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressClassList(ref common.Ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClass"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClass"),
 									},
 								},
 							},
@@ -2461,7 +2464,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressClassList(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClass", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -2529,14 +2532,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressClassSpec(ref common.Ref
 					},
 					"parameters": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassParametersReference"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassParametersReference"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassParametersReference"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressClassParametersReference"},
 	}
 }
 
@@ -2575,7 +2578,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressList(ref common.Referenc
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Ingress"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Ingress"),
 									},
 								},
 							},
@@ -2586,7 +2589,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressList(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Ingress", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Ingress", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -2616,7 +2619,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressLoadBalancerIngress(ref 
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressPortStatus"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressPortStatus"),
 									},
 								},
 							},
@@ -2626,7 +2629,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressLoadBalancerIngress(ref 
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressPortStatus"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressPortStatus"},
 	}
 }
 
@@ -2644,7 +2647,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressLoadBalancerStatus(ref c
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerIngress"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerIngress"),
 									},
 								},
 							},
@@ -2654,7 +2657,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressLoadBalancerStatus(ref c
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerIngress"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerIngress"},
 	}
 }
 
@@ -2709,14 +2712,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressRule(ref common.Referenc
 					},
 					"http": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue"},
 	}
 }
 
@@ -2729,14 +2732,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressRuleValue(ref common.Ref
 				Properties: map[string]spec.Schema{
 					"http": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.HTTPIngressRuleValue"},
 	}
 }
 
@@ -2759,7 +2762,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressServiceBackend(ref commo
 						SchemaProps: spec.SchemaProps{
 							Description: "port of the referenced service. A port name or port number is required for a IngressServiceBackend.",
 							Default:     map[string]interface{}{},
-							Ref:         ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ServiceBackendPort"),
+							Ref:         ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ServiceBackendPort"),
 						},
 					},
 				},
@@ -2767,7 +2770,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressServiceBackend(ref commo
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ServiceBackendPort"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ServiceBackendPort"},
 	}
 }
 
@@ -2786,7 +2789,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressSpec(ref common.Referenc
 					},
 					"defaultBackend": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend"),
 						},
 					},
 					"tls": {
@@ -2796,7 +2799,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressSpec(ref common.Referenc
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressTLS"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressTLS"),
 									},
 								},
 							},
@@ -2809,7 +2812,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressSpec(ref common.Referenc
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressRule"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressRule"),
 									},
 								},
 							},
@@ -2819,7 +2822,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressSpec(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressRule", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressTLS"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressBackend", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressRule", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressTLS"},
 	}
 }
 
@@ -2833,14 +2836,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_IngressStatus(ref common.Refere
 					"loadBalancer": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerStatus"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IngressLoadBalancerStatus"},
 	}
 }
 
@@ -2911,7 +2914,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_KnownServer(ref common.Referenc
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.KnownServerEntry"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.KnownServerEntry"),
 									},
 								},
 							},
@@ -2922,7 +2925,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_KnownServer(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.KnownServerEntry", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.KnownServerEntry", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -2994,7 +2997,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_KnownServerList(ref common.Refe
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.KnownServer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.KnownServer"),
 									},
 								},
 							},
@@ -3005,7 +3008,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_KnownServerList(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.KnownServer", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.KnownServer", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -3057,7 +3060,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_License(ref common.ReferenceCal
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Location"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Location"),
 									},
 								},
 							},
@@ -3068,7 +3071,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_License(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Location"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Location"},
 	}
 }
 
@@ -3210,13 +3213,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Location(ref common.ReferenceCa
 					"LocationData": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LocationData"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LocationData"),
 						},
 					},
 					"LocationMetadata": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LocationMetadata"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LocationMetadata"),
 						},
 					},
 				},
@@ -3224,7 +3227,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Location(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LocationData", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LocationMetadata"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LocationData", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LocationMetadata"},
 	}
 }
 
@@ -3237,7 +3240,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_LocationData(ref common.Referen
 					"Coordinates": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates"),
 						},
 					},
 					"accessPath": {
@@ -3253,7 +3256,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_LocationData(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates"},
 	}
 }
 
@@ -3293,7 +3296,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Match(ref common.ReferenceCallb
 					"vulnerability": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Vulnerability"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Vulnerability"),
 						},
 					},
 					"relatedVulnerabilities": {
@@ -3303,7 +3306,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Match(ref common.ReferenceCallb
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata"),
 									},
 								},
 							},
@@ -3316,7 +3319,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Match(ref common.ReferenceCallb
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.MatchDetails"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.MatchDetails"),
 									},
 								},
 							},
@@ -3325,7 +3328,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Match(ref common.ReferenceCallb
 					"artifact": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GrypePackage"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GrypePackage"),
 						},
 					},
 				},
@@ -3333,7 +3336,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Match(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GrypePackage", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.MatchDetails", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Vulnerability", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GrypePackage", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.MatchDetails", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Vulnerability", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata"},
 	}
 }
 
@@ -3514,7 +3517,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighbor(ref common.Refe
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPort"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPort"),
 									},
 								},
 							},
@@ -3542,7 +3545,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighbor(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPort", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPort", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
 	}
 }
 
@@ -3576,7 +3579,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhood(ref common.
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodSpec"),
 						},
 					},
 				},
@@ -3584,7 +3587,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhood(ref common.
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -3608,7 +3611,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodContainer(re
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor"),
 									},
 								},
 							},
@@ -3621,7 +3624,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodContainer(re
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor"),
 									},
 								},
 							},
@@ -3632,7 +3635,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodContainer(re
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor"},
 	}
 }
 
@@ -3670,7 +3673,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodList(ref com
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhood"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhood"),
 									},
 								},
 							},
@@ -3681,7 +3684,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodList(ref com
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhood", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhood", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -3728,7 +3731,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodSpec(ref com
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer"),
 									},
 								},
 							},
@@ -3741,7 +3744,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodSpec(ref com
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer"),
 									},
 								},
 							},
@@ -3754,7 +3757,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodSpec(ref com
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer"),
 									},
 								},
 							},
@@ -3765,7 +3768,181 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborhoodSpec(ref com
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelectorRequirement"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborhoodContainer", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelectorRequirement"},
+	}
+}
+
+func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighbors(ref common.ReferenceCallback) common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
+		Schema: spec.Schema{
+			SchemaProps: spec.SchemaProps{
+				Description: "NetworkNeighbors represents a list of network communications for a specific workload. DEPRECATED - use NetworkNeighborhood instead.",
+				Type:        []string{"object"},
+				Properties: map[string]spec.Schema{
+					"kind": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
+					"apiVersion": {
+						SchemaProps: spec.SchemaProps{
+							Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
+					"metadata": {
+						SchemaProps: spec.SchemaProps{
+							Default: map[string]interface{}{},
+							Ref:     ref("k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"),
+						},
+					},
+					"spec": {
+						SchemaProps: spec.SchemaProps{
+							Default: map[string]interface{}{},
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborsSpec"),
+						},
+					},
+				},
+				Required: []string{"spec"},
+			},
+		},
+		Dependencies: []string{
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighborsSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+	}
+}
+
+func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborsList(ref common.ReferenceCallback) common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
+		Schema: spec.Schema{
+			SchemaProps: spec.SchemaProps{
+				Description: "NetworkNeighborsList is a list of NetworkNeighbors. DEPRECATED - use NetworkNeighborhoodList instead.",
+				Type:        []string{"object"},
+				Properties: map[string]spec.Schema{
+					"kind": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
+					"apiVersion": {
+						SchemaProps: spec.SchemaProps{
+							Description: "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
+					"metadata": {
+						SchemaProps: spec.SchemaProps{
+							Default: map[string]interface{}{},
+							Ref:     ref("k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"),
+						},
+					},
+					"items": {
+						SchemaProps: spec.SchemaProps{
+							Type: []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: map[string]interface{}{},
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbors"),
+									},
+								},
+							},
+						},
+					},
+				},
+				Required: []string{"items"},
+			},
+		},
+		Dependencies: []string{
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbors", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+	}
+}
+
+func schema_pkg_apis_softwarecomposition_v1beta1_NetworkNeighborsSpec(ref common.ReferenceCallback) common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
+		Schema: spec.Schema{
+			SchemaProps: spec.SchemaProps{
+				Type: []string{"object"},
+				Properties: map[string]spec.Schema{
+					"matchLabels": {
+						SchemaProps: spec.SchemaProps{
+							Description: "matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.",
+							Type:        []string{"object"},
+							AdditionalProperties: &spec.SchemaOrBool{
+								Allows: true,
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: "",
+										Type:    []string{"string"},
+										Format:  "",
+									},
+								},
+							},
+						},
+					},
+					"matchExpressions": {
+						SchemaProps: spec.SchemaProps{
+							Description: "matchExpressions is a list of label selector requirements. The requirements are ANDed.",
+							Type:        []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: map[string]interface{}{},
+										Ref:     ref("k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelectorRequirement"),
+									},
+								},
+							},
+						},
+					},
+					"ingress": {
+						VendorExtensible: spec.VendorExtensible{
+							Extensions: spec.Extensions{
+								"x-kubernetes-patch-merge-key": "identifier",
+								"x-kubernetes-patch-strategy":  "merge",
+							},
+						},
+						SchemaProps: spec.SchemaProps{
+							Type: []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: map[string]interface{}{},
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor"),
+									},
+								},
+							},
+						},
+					},
+					"egress": {
+						VendorExtensible: spec.VendorExtensible{
+							Extensions: spec.Extensions{
+								"x-kubernetes-patch-merge-key": "identifier",
+								"x-kubernetes-patch-strategy":  "merge",
+							},
+						},
+						SchemaProps: spec.SchemaProps{
+							Type: []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: map[string]interface{}{},
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor"),
+									},
+								},
+							},
+						},
+					},
+				},
+				Required: []string{"ingress", "egress"},
+			},
+		},
+		Dependencies: []string{
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkNeighbor", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelectorRequirement"},
 	}
 }
 
@@ -3796,14 +3973,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicy(ref common.Refere
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicySpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicySpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -3821,7 +3998,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyEgressRule(ref com
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort"),
 									},
 								},
 							},
@@ -3834,7 +4011,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyEgressRule(ref com
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer"),
 									},
 								},
 							},
@@ -3844,7 +4021,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyEgressRule(ref com
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort"},
 	}
 }
 
@@ -3862,7 +4039,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyIngressRule(ref co
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort"),
 									},
 								},
 							},
@@ -3875,7 +4052,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyIngressRule(ref co
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer"),
 									},
 								},
 							},
@@ -3885,7 +4062,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyIngressRule(ref co
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPeer", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyPort"},
 	}
 }
 
@@ -3924,7 +4101,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyList(ref common.Re
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy"),
 									},
 								},
 							},
@@ -3935,7 +4112,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyList(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicy", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -3958,14 +4135,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicyPeer(ref common.Re
 					},
 					"ipBlock": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IPBlock"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IPBlock"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.IPBlock", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.IPBlock", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
 	}
 }
 
@@ -4021,7 +4198,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicySpec(ref common.Re
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyIngressRule"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyIngressRule"),
 									},
 								},
 							},
@@ -4034,7 +4211,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicySpec(ref common.Re
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyEgressRule"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyEgressRule"),
 									},
 								},
 							},
@@ -4059,7 +4236,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_NetworkPolicySpec(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyEgressRule", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyIngressRule", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyEgressRule", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.NetworkPolicyIngressRule", "k8s.io/apimachinery/pkg/apis/meta/v1.LabelSelector"},
 	}
 }
 
@@ -4198,14 +4375,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_OpenVulnerabilityExchangeContai
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VEX"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VEX"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VEX", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VEX", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -4242,7 +4419,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_OpenVulnerabilityExchangeContai
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.OpenVulnerabilityExchangeContainer"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.OpenVulnerabilityExchangeContainer"),
 									},
 								},
 							},
@@ -4253,7 +4430,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_OpenVulnerabilityExchangeContai
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.OpenVulnerabilityExchangeContainer", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.OpenVulnerabilityExchangeContainer", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -4306,7 +4483,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicData(ref common.Ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Location"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Location"),
 									},
 								},
 							},
@@ -4319,7 +4496,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicData(ref common.Ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.License"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.License"),
 									},
 								},
 							},
@@ -4339,7 +4516,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicData(ref common.Ref
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CPE"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CPE"),
 									},
 								},
 							},
@@ -4357,7 +4534,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicData(ref common.Ref
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.CPE", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.License", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Location"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.CPE", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.License", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Location"},
 	}
 }
 
@@ -4410,7 +4587,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicDataV01011(ref comm
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Location"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Location"),
 									},
 								},
 							},
@@ -4423,7 +4600,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicDataV01011(ref comm
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.License"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.License"),
 									},
 								},
 							},
@@ -4462,7 +4639,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_PackageBasicDataV01011(ref comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.License", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Location"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.License", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Location"},
 	}
 }
 
@@ -4548,7 +4725,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Product(ref common.ReferenceCal
 					"Component": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Component"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Component"),
 						},
 					},
 					"subcomponents": {
@@ -4558,7 +4735,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Product(ref common.ReferenceCal
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Subcomponent"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Subcomponent"),
 									},
 								},
 							},
@@ -4569,7 +4746,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Product(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Component", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Subcomponent"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Component", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Subcomponent"},
 	}
 }
 
@@ -4730,20 +4907,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyft(ref common.ReferenceCa
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -4777,20 +4954,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftFiltered(ref common.Ref
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftSpec", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -4828,7 +5005,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftFilteredList(ref common
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftFiltered"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftFiltered"),
 									},
 								},
 							},
@@ -4839,7 +5016,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftFilteredList(ref common
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftFiltered", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyftFiltered", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -4877,7 +5054,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftList(ref common.Referen
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyft"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyft"),
 									},
 								},
 							},
@@ -4888,7 +5065,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftList(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyft", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SBOMSyft", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -4902,13 +5079,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftSpec(ref common.Referen
 					"metadata": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SPDXMeta"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SPDXMeta"),
 						},
 					},
 					"syft": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftDocument"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftDocument"),
 						},
 					},
 				},
@@ -4916,7 +5093,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SBOMSyftSpec(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SPDXMeta", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftDocument"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SPDXMeta", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftDocument"},
 	}
 }
 
@@ -4941,13 +5118,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SPDXMeta(ref common.ReferenceCa
 					"tool": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ToolMeta"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ToolMeta"),
 						},
 					},
 					"report": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ReportMeta"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ReportMeta"),
 						},
 					},
 				},
@@ -4955,7 +5132,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SPDXMeta(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ReportMeta", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ToolMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ReportMeta", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ToolMeta"},
 	}
 }
 
@@ -4982,13 +5159,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ScannedControl(ref common.Refer
 					"severity": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus"),
 						},
 					},
 					"rules": {
@@ -4998,7 +5175,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ScannedControl(ref common.Refer
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlRule"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlRule"),
 									},
 								},
 							},
@@ -5009,7 +5186,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ScannedControl(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlRule", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlRule", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus"},
 	}
 }
 
@@ -5029,7 +5206,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlRule(ref common.R
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RuleStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RuleStatus"),
 						},
 					},
 					"controlConfigurations": {
@@ -5053,7 +5230,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlRule(ref common.R
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RulePath"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RulePath"),
 									},
 								},
 							},
@@ -5092,7 +5269,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlRule(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RulePath", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.RuleStatus"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RulePath", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.RuleStatus"},
 	}
 }
 
@@ -5146,13 +5323,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlSummary(ref commo
 					"severity": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus"),
 						},
 					},
 				},
@@ -5160,7 +5337,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_ScannedControlSummary(ref commo
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ControlSeverity", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlStatus"},
 	}
 }
 
@@ -5220,20 +5397,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfile(ref common.Refer
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileSpec", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileSpec", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfileStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -5270,7 +5447,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileList(ref common.R
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfile"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfile"),
 									},
 								},
 							},
@@ -5281,7 +5458,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileList(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfile", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeccompProfile", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -5298,7 +5475,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileSpec(ref common.R
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"),
 									},
 								},
 							},
@@ -5311,7 +5488,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileSpec(ref common.R
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"),
 									},
 								},
 							},
@@ -5324,7 +5501,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileSpec(ref common.R
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"),
 									},
 								},
 							},
@@ -5334,7 +5511,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileSpec(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfile"},
 	}
 }
 
@@ -5352,7 +5529,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileStatus(ref common
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileStatus"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileStatus"),
 									},
 								},
 							},
@@ -5362,7 +5539,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeccompProfileStatus(ref common
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileStatus"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileStatus"},
 	}
 }
 
@@ -5401,44 +5578,44 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SeveritySummary(ref common.Refe
 					"critical": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
 						},
 					},
 					"high": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
 						},
 					},
 					"medium": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
 						},
 					},
 					"low": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
 						},
 					},
 					"negligible": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
 						},
 					},
 					"unknown": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityCounters"},
 	}
 }
 
@@ -5463,14 +5640,14 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfile(ref common
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileSpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileSpec"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SingleSeccompProfileSpec"},
 	}
 }
 
@@ -5537,7 +5714,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfileSpec(ref co
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Syscall"),
+										Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Syscall"),
 									},
 								},
 							},
@@ -5563,7 +5740,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfileSpec(ref co
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Syscall"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Syscall"},
 	}
 }
 
@@ -5581,7 +5758,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfileStatus(ref 
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Condition"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Condition"),
 									},
 								},
 							},
@@ -5624,7 +5801,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SingleSeccompProfileStatus(ref 
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Condition"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Condition"},
 	}
 }
 
@@ -5716,7 +5893,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Statement(ref common.ReferenceC
 						SchemaProps: spec.SchemaProps{
 							Description: "[vul_id] SHOULD use existing and well known identifiers, for example: CVE, the Global Security Database (GSD), or a supplier’s vulnerability tracking system. It is expected that vulnerability identification systems are external to and maintained separately from VEX.\n\n[vul_id] MAY be URIs or URLs. [vul_id] MAY be arbitrary and MAY be created by the VEX statement [author].",
 							Default:     map[string]interface{}{},
-							Ref:         ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VexVulnerability"),
+							Ref:         ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VexVulnerability"),
 						},
 					},
 					"timestamp": {
@@ -5741,7 +5918,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Statement(ref common.ReferenceC
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Product"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Product"),
 									},
 								},
 							},
@@ -5794,7 +5971,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Statement(ref common.ReferenceC
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Product", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VexVulnerability"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Product", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VexVulnerability"},
 	}
 }
 
@@ -5812,7 +5989,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_StatusBase(ref common.Reference
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Condition"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Condition"),
 									},
 								},
 							},
@@ -5828,7 +6005,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_StatusBase(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Condition"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Condition"},
 	}
 }
 
@@ -5841,7 +6018,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Subcomponent(ref common.Referen
 					"Component": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Component"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Component"),
 						},
 					},
 				},
@@ -5849,7 +6026,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Subcomponent(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Component"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Component"},
 	}
 }
 
@@ -5926,7 +6103,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftDocument(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftPackage"),
+										Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftPackage"),
 									},
 								},
 							},
@@ -5940,7 +6117,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftDocument(ref common.Referen
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftRelationship"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftRelationship"),
 									},
 								},
 							},
@@ -5953,7 +6130,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftDocument(ref common.Referen
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftFile"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftFile"),
 									},
 								},
 							},
@@ -5962,28 +6139,28 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftDocument(ref common.Referen
 					"source": {
 						SchemaProps: spec.SchemaProps{
 							Description: "note: must have omitempty",
-							Ref:         ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftSource"),
+							Ref:         ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftSource"),
 						},
 					},
 					"distro": {
 						SchemaProps: spec.SchemaProps{
 							Description: "SyftSource represents the original object that was cataloged",
 							Default:     map[string]interface{}{},
-							Ref:         ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LinuxRelease"),
+							Ref:         ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LinuxRelease"),
 						},
 					},
 					"descriptor": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Distro represents the Linux distribution that was detected from the source",
 							Default:     map[string]interface{}{},
-							Ref:         ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftDescriptor"),
+							Ref:         ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftDescriptor"),
 						},
 					},
 					"schema": {
 						SchemaProps: spec.SchemaProps{
 							Description: "SyftDescriptor is a block containing self-describing information about syft",
 							Default:     map[string]interface{}{},
-							Ref:         ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Schema"),
+							Ref:         ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Schema"),
 						},
 					},
 				},
@@ -5991,7 +6168,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftDocument(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.LinuxRelease", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Schema", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftDescriptor", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftFile", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftPackage", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftRelationship", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SyftSource"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.LinuxRelease", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Schema", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftDescriptor", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftFile", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftPackage", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftRelationship", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SyftSource"},
 	}
 }
 
@@ -6011,12 +6188,12 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftFile(ref common.ReferenceCa
 					"location": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates"),
 						},
 					},
 					"metadata": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileMetadataEntry"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileMetadataEntry"),
 						},
 					},
 					"contents": {
@@ -6032,7 +6209,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftFile(ref common.ReferenceCa
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Digest"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Digest"),
 									},
 								},
 							},
@@ -6045,7 +6222,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftFile(ref common.ReferenceCa
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileLicense"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileLicense"),
 									},
 								},
 							},
@@ -6053,7 +6230,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftFile(ref common.ReferenceCa
 					},
 					"executable": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Executable"),
+							Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Executable"),
 						},
 					},
 				},
@@ -6061,7 +6238,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftFile(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Digest", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Executable", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileLicense", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.FileMetadataEntry"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Coordinates", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Digest", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Executable", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileLicense", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.FileMetadataEntry"},
 	}
 }
 
@@ -6075,13 +6252,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftPackage(ref common.Referenc
 					"PackageBasicData": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PackageBasicData"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PackageBasicData"),
 						},
 					},
 					"PackageCustomData": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PackageCustomData"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PackageCustomData"),
 						},
 					},
 				},
@@ -6089,7 +6266,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_SyftPackage(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PackageBasicData", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.PackageCustomData"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PackageBasicData", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.PackageCustomData"},
 	}
 }
 
@@ -6225,7 +6402,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Syscall(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Arg"),
+										Ref: ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Arg"),
 									},
 								},
 							},
@@ -6236,7 +6413,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Syscall(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Arg"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Arg"},
 	}
 }
 
@@ -6303,7 +6480,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VEX(ref common.ReferenceCallbac
 					"Metadata": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Metadata"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Metadata"),
 						},
 					},
 					"statements": {
@@ -6313,7 +6490,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VEX(ref common.ReferenceCallbac
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Statement"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Statement"),
 									},
 								},
 							},
@@ -6324,7 +6501,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VEX(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Metadata", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Statement"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Metadata", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Statement"},
 	}
 }
 
@@ -6385,13 +6562,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitiesComponents(ref c
 					"all": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"),
 						},
 					},
 					"relevant": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"),
 						},
 					},
 				},
@@ -6399,7 +6576,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitiesComponents(ref c
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"},
 	}
 }
 
@@ -6446,13 +6623,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Vulnerability(ref common.Refere
 					"VulnerabilityMetadata": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata"),
 						},
 					},
 					"fix": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Fix"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Fix"),
 						},
 					},
 					"advisories": {
@@ -6462,7 +6639,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Vulnerability(ref common.Refere
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Advisory"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Advisory"),
 									},
 								},
 							},
@@ -6473,7 +6650,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_Vulnerability(ref common.Refere
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Advisory", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Fix", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Advisory", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Fix", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityMetadata"},
 	}
 }
 
@@ -6534,20 +6711,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifest(ref commo
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSpec", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSpec", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -6585,7 +6762,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestList(ref c
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifest"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifest"),
 									},
 								},
 							},
@@ -6596,7 +6773,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestList(ref c
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifest", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifest", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -6617,13 +6794,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestMeta(ref c
 					"tool": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestToolMeta"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestToolMeta"),
 						},
 					},
 					"report": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestReportMeta"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestReportMeta"),
 						},
 					},
 				},
@@ -6631,7 +6808,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestMeta(ref c
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestReportMeta", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestToolMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestReportMeta", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestToolMeta"},
 	}
 }
 
@@ -6665,20 +6842,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSpec(ref c
 					"metadata": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestMeta"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestMeta"),
 						},
 					},
 					"payload": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GrypeDocument"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GrypeDocument"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.GrypeDocument", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.GrypeDocument", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestMeta"},
 	}
 }
 
@@ -6722,20 +6899,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummary(re
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummarySpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummarySpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummarySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestStatus", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummarySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -6773,7 +6950,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummaryLis
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummary"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummary"),
 									},
 								},
 							},
@@ -6784,7 +6961,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummaryLis
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummary", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilityManifestSummary", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -6797,13 +6974,13 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummarySpe
 					"severities": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary"),
 						},
 					},
 					"vulnerabilitiesRef": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesComponents"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesComponents"),
 						},
 					},
 				},
@@ -6811,7 +6988,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityManifestSummarySpe
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesComponents"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesComponents"},
 	}
 }
 
@@ -6909,7 +7086,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityMetadata(ref commo
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Cvss"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Cvss"),
 									},
 								},
 							},
@@ -6920,7 +7097,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilityMetadata(ref commo
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.Cvss"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.Cvss"},
 	}
 }
 
@@ -6954,20 +7131,20 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummary(ref common
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummarySpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummarySpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummaryStatus"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummaryStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummarySpec", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummaryStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummarySpec", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummaryStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -7005,7 +7182,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummaryList(ref co
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummary"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummary"),
 									},
 								},
 							},
@@ -7016,7 +7193,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummaryList(ref co
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummary", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitySummary", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -7029,7 +7206,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummarySpec(ref co
 					"severities": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary"),
 						},
 					},
 					"vulnerabilitiesRef": {
@@ -7039,7 +7216,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummarySpec(ref co
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"),
 									},
 								},
 							},
@@ -7050,7 +7227,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_VulnerabilitySummarySpec(ref co
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.SeveritySummary", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.VulnerabilitiesObjScope"},
 	}
 }
 
@@ -7094,7 +7271,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScan(ref c
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSpec"),
 						},
 					},
 				},
@@ -7102,7 +7279,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScan(ref c
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -7140,7 +7317,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanList(r
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScan"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScan"),
 									},
 								},
 							},
@@ -7151,7 +7328,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanList(r
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScan", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScan", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -7217,7 +7394,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSpec(r
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControl"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControl"),
 									},
 								},
 							},
@@ -7230,7 +7407,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSpec(r
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadScanRelatedObject"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadScanRelatedObject"),
 									},
 								},
 							},
@@ -7241,7 +7418,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSpec(r
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControl", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadScanRelatedObject"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControl", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadScanRelatedObject"},
 	}
 }
 
@@ -7275,7 +7452,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummar
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummarySpec"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummarySpec"),
 						},
 					},
 				},
@@ -7283,7 +7460,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummar
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummarySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummarySpec", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -7356,7 +7533,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummar
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummary"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummary"),
 									},
 								},
 							},
@@ -7367,7 +7544,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummar
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummary", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSummary", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -7380,7 +7557,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummar
 					"severities": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary"),
+							Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary"),
 						},
 					},
 					"controls": {
@@ -7391,7 +7568,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummar
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlSummary"),
+										Ref:     ref("github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlSummary"),
 									},
 								},
 							},
@@ -7402,7 +7579,7 @@ func schema_pkg_apis_softwarecomposition_v1beta1_WorkloadConfigurationScanSummar
 			},
 		},
 		Dependencies: []string{
-			"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlSummary", "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary"},
+			"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.ScannedControlSummary", "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1.WorkloadConfigurationScanSeveritiesSummary"},
 	}
 }
 

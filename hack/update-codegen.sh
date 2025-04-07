@@ -23,7 +23,7 @@ CODEGEN_PKG=${CODEGEN_PKG:-$(cd "${SCRIPT_ROOT}"; ls -d -1 ./vendor/k8s.io/code-
 
 source "${CODEGEN_PKG}/kube_codegen.sh"
 
-THIS_PKG="github.com/Aryaman6492/storage"
+THIS_PKG="github.com/kubescape/storage"
 
 kube::codegen::gen_helpers \
     --boilerplate "${SCRIPT_ROOT}/hack/boilerplate.go.txt" \

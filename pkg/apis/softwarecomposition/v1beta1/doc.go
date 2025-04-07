@@ -16,7 +16,7 @@ limitations under the License.
 
 // +k8s:openapi-gen=true
 // +k8s:deepcopy-gen=package
-// +k8s:conversion-gen=github.com/Aryaman6492/storage/pkg/apis/softwarecomposition
+// +k8s:conversion-gen=github.com/kubescape/storage/pkg/apis/softwarecomposition
 // +k8s:defaulter-gen=TypeMeta
 // +groupName=spdx.softwarecomposition.seclogic.io
 

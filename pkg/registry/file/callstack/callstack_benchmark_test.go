@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	types "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	types "github.com/kubescape/storage/pkg/apis/softwarecomposition"
 )
 
 // Helper function to create a linear call stack of specified depth

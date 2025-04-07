@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	mapset "github.com/deckarep/golang-set/v2"
-	types "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	types "github.com/kubescape/storage/pkg/apis/softwarecomposition"
 )
 
 func AnalyzeEndpoints(endpoints *[]types.HTTPEndpoint, analyzer *PathAnalyzer) []types.HTTPEndpoint {

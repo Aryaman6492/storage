@@ -28,9 +28,9 @@ import (
 	"github.com/go-logr/zapr"
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"
-	"github.com/Aryaman6492/storage/pkg/cleanup"
-	"github.com/Aryaman6492/storage/pkg/cmd/server"
-	"github.com/Aryaman6492/storage/pkg/registry/file"
+	"github.com/kubescape/storage/pkg/cleanup"
+	"github.com/kubescape/storage/pkg/cmd/server"
+	"github.com/kubescape/storage/pkg/registry/file"
 	"github.com/spf13/afero"
 	"go.uber.org/zap"
 	genericapiserver "k8s.io/apiserver/pkg/server"
@@ -65,11 +65,8 @@ func main() {
 	osFs := afero.NewOsFs()
 	pool := file.NewPool(filepath.Join(file.DefaultStorageRoot, "metadata.sq3"), 0) // If less than 1, a reasonable default is used.
 
-	// setup watcher
-	watchDispatcher := file.NewWatchDispatcher()
-
 	stopCh := genericapiserver.SetupSignalHandler()
-	options := server.NewWardleServerOptions(os.Stdout, os.Stderr, osFs, pool, clusterData.Namespace, watchDispatcher)
+	options := server.NewWardleServerOptions(os.Stdout, os.Stderr, osFs, pool, clusterData.Namespace)
 	cmd := server.NewCommandStartWardleServer(options, stopCh)
 
 	// cleanup task
@@ -87,7 +84,7 @@ func main() {
 
 	relevancyEnabled := clusterData.RelevantImageVulnerabilitiesEnabled != nil && *clusterData.RelevantImageVulnerabilitiesEnabled
 
-	cleanupHandler := cleanup.NewResourcesCleanupHandler(osFs, file.DefaultStorageRoot, pool, watchDispatcher, intervalDuration, kubernetesAPI, relevancyEnabled)
+	cleanupHandler := cleanup.NewResourcesCleanupHandler(osFs, file.DefaultStorageRoot, pool, intervalDuration, kubernetesAPI, relevancyEnabled)
 	go cleanupHandler.StartCleanupTask(ctx)
 
 	logger.L().Info("APIServer started")

@@ -17,7 +17,7 @@ limitations under the License.
 package wardleinitializer
 
 import (
-	informers "github.com/Aryaman6492/storage/pkg/generated/informers/externalversions"
+	informers "github.com/kubescape/storage/pkg/generated/informers/externalversions"
 	"k8s.io/apiserver/pkg/admission"
 )
 

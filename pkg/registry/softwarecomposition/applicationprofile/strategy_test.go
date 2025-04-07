@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
 	"github.com/stretchr/testify/assert"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -98,7 +98,7 @@ func TestPrepareForUpdateAnnotations(t *testing.T) {
 			obj := &softwarecomposition.ApplicationProfile{ObjectMeta: metav1.ObjectMeta{Annotations: tt.newAnnotations}}
 			old := &softwarecomposition.ApplicationProfile{ObjectMeta: metav1.ObjectMeta{Annotations: tt.oldAnnotations}}
 
-			s.PrepareForUpdate(context.TODO(), obj, old)
+			s.PrepareForUpdate(context.Background(), obj, old)
 			assert.Equal(t, tt.expected, obj.Annotations)
 		})
 	}
@@ -257,7 +257,7 @@ func TestPrepareForUpdateFullObj(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			s := applicationProfileStrategy{}
-			s.PrepareForUpdate(context.TODO(), tt.new, tt.old)
+			s.PrepareForUpdate(context.Background(), tt.new, tt.old)
 			assert.Equal(t, tt.expected, tt.new)
 		})
 	}

@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	v1beta1 "github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/typed/softwarecomposition/v1beta1"
+	v1beta1 "github.com/kubescape/storage/pkg/generated/clientset/versioned/typed/softwarecomposition/v1beta1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )
@@ -50,6 +50,10 @@ func (c *FakeSpdxV1beta1) KnownServers(namespace string) v1beta1.KnownServerInte
 
 func (c *FakeSpdxV1beta1) NetworkNeighborhoods(namespace string) v1beta1.NetworkNeighborhoodInterface {
 	return &FakeNetworkNeighborhoods{c, namespace}
+}
+
+func (c *FakeSpdxV1beta1) NetworkNeighborses(namespace string) v1beta1.NetworkNeighborsInterface {
+	return &FakeNetworkNeighborses{c, namespace}
 }
 
 func (c *FakeSpdxV1beta1) OpenVulnerabilityExchangeContainers(namespace string) v1beta1.OpenVulnerabilityExchangeContainerInterface {

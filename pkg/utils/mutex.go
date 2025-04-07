@@ -1,16 +1,7 @@
 package utils
 
 import (
-	"context"
-	"errors"
 	"sync"
-
-	"github.com/cenkalti/backoff/v5"
-)
-
-var (
-	ContextNotCancellableError = errors.New("context is not cancellable")
-	TimeOutError               = errors.New("lock acquisition timed out")
 )
 
 type MapMutex[T comparable] struct {
@@ -36,50 +27,12 @@ func (m *MapMutex[T]) ensureLock(key T) *sync.RWMutex {
 	return l
 }
 
-func (m *MapMutex[T]) Lock(ctx context.Context, key T) error {
-	done := ctx.Done()
-	if done == nil {
-		return ContextNotCancellableError // FIXME maybe should not return an error
-	}
-	lock := m.ensureLock(key)
-	ticker := backoff.NewTicker(backoff.NewExponentialBackOff())
-	defer ticker.Stop()
-	for range ticker.C {
-		select {
-		case <-done:
-			// context has expired
-			return ctx.Err()
-		default:
-		}
-		if lock.TryLock() {
-			// lock acquired
-			return nil
-		}
-	}
-	return TimeOutError
+func (m *MapMutex[T]) Lock(key T) {
+	m.ensureLock(key).Lock()
 }
 
-func (m *MapMutex[T]) RLock(ctx context.Context, key T) error {
-	done := ctx.Done()
-	if done == nil {
-		return ContextNotCancellableError // FIXME maybe should not return an error
-	}
-	lock := m.ensureLock(key)
-	ticker := backoff.NewTicker(backoff.NewExponentialBackOff())
-	defer ticker.Stop()
-	for range ticker.C {
-		select {
-		case <-done:
-			// context has expired
-			return ctx.Err()
-		default:
-		}
-		if lock.TryRLock() {
-			// lock acquired
-			return nil
-		}
-	}
-	return TimeOutError
+func (m *MapMutex[T]) RLock(key T) {
+	m.ensureLock(key).RLock()
 }
 
 func (m *MapMutex[T]) RUnlock(key T) {

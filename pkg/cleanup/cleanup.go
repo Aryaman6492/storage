@@ -12,8 +12,8 @@ import (
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"
 	helpersv1 "github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
-	"github.com/Aryaman6492/storage/pkg/registry/file"
+	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/kubescape/storage/pkg/registry/file"
 	"github.com/spf13/afero"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"zombiezen.com/go/sqlite/sqlitemigration"
@@ -36,31 +36,30 @@ type ResourcesCleanupHandler struct {
 	fetcher               ResourcesFetcher
 	deleteFunc            TypeDeleteFunc
 	resourceToKindHandler map[string][]TypeCleanupHandlerFunc
-	watchDispatcher       *file.WatchDispatcher
 }
 
 func initResourceToKindHandler(relevancyEnabled bool) map[string][]TypeCleanupHandlerFunc {
 	resourceKindToHandler := map[string][]TypeCleanupHandlerFunc{
 		// configurationscansummaries is virtual
 		// vulnerabilitysummaries is virtual
-		"applicationactivities":               {deleteByTemplateHashOrWlid},
-		"applicationprofiles":                 {deleteByTemplateHashOrWlid},
-		"applicationprofilesummaries":         {deleteDeprecated},
-		"networkneighborses":                  {deleteDeprecated},
-		"networkneighborhoods":                {deleteByTemplateHashOrWlid},
-		"openvulnerabilityexchangecontainers": {deleteByImageId},
-		"sbomspdxv2p3filtereds":               {deleteDeprecated},
-		"sbomspdxv2p3filtered":                {deleteDeprecated},
-		"sbomspdxv2p3s":                       {deleteDeprecated},
-		"sbomspdxv2p3":                        {deleteDeprecated},
-		"sbomsyftfiltered":                    {deleteByInstanceId},
-		"sbomsyft":                            {deleteByImageId},
-		"sbomsummaries":                       {deleteDeprecated},
-		"seccompprofiles":                     {deleteByTemplateHashOrWlid},
-		"vulnerabilitymanifests":              {deleteByImageIdOrInstanceId},
-		"vulnerabilitymanifestsummaries":      {deleteByWlidAndContainer},
-		"workloadconfigurationscans":          {deleteByWlid},
-		"workloadconfigurationscansummaries":  {deleteByWlid},
+		"applicationactivities":               []TypeCleanupHandlerFunc{deleteByTemplateHashOrWlid},
+		"applicationprofiles":                 []TypeCleanupHandlerFunc{deleteByTemplateHashOrWlid},
+		"applicationprofilesummaries":         []TypeCleanupHandlerFunc{deleteDeprecated},
+		"networkneighborses":                  []TypeCleanupHandlerFunc{deleteDeprecated},
+		"networkneighborhoods":                []TypeCleanupHandlerFunc{deleteByTemplateHashOrWlid},
+		"openvulnerabilityexchangecontainers": []TypeCleanupHandlerFunc{deleteByImageId},
+		"sbomspdxv2p3filtereds":               []TypeCleanupHandlerFunc{deleteDeprecated},
+		"sbomspdxv2p3filtered":                []TypeCleanupHandlerFunc{deleteDeprecated},
+		"sbomspdxv2p3s":                       []TypeCleanupHandlerFunc{deleteDeprecated},
+		"sbomspdxv2p3":                        []TypeCleanupHandlerFunc{deleteDeprecated},
+		"sbomsyftfiltered":                    []TypeCleanupHandlerFunc{deleteByInstanceId},
+		"sbomsyft":                            []TypeCleanupHandlerFunc{deleteByImageId},
+		"sbomsummaries":                       []TypeCleanupHandlerFunc{deleteDeprecated},
+		"seccompprofiles":                     []TypeCleanupHandlerFunc{deleteByTemplateHashOrWlid},
+		"vulnerabilitymanifests":              []TypeCleanupHandlerFunc{deleteByImageIdOrInstanceId},
+		"vulnerabilitymanifestsummaries":      []TypeCleanupHandlerFunc{deleteByWlidAndContainer},
+		"workloadconfigurationscans":          []TypeCleanupHandlerFunc{deleteByWlid},
+		"workloadconfigurationscansummaries":  []TypeCleanupHandlerFunc{deleteByWlid},
 	}
 
 	// only if relevancy is enabled, we need to delete application profiles with missing instanceId or wlid annotations
@@ -71,7 +70,7 @@ func initResourceToKindHandler(relevancyEnabled bool) map[string][]TypeCleanupHa
 	return resourceKindToHandler
 }
 
-func NewResourcesCleanupHandler(appFs afero.Fs, root string, pool *sqlitemigration.Pool, watchDispatcher *file.WatchDispatcher, interval time.Duration, fetcher ResourcesFetcher, relevancyEnabled bool) *ResourcesCleanupHandler {
+func NewResourcesCleanupHandler(appFs afero.Fs, root string, pool *sqlitemigration.Pool, interval time.Duration, fetcher ResourcesFetcher, relevancyEnabled bool) *ResourcesCleanupHandler {
 
 	return &ResourcesCleanupHandler{
 		appFs:                 appFs,
@@ -81,7 +80,6 @@ func NewResourcesCleanupHandler(appFs afero.Fs, root string, pool *sqlitemigrati
 		fetcher:               fetcher,
 		deleteFunc:            deleteFile,
 		resourceToKindHandler: initResourceToKindHandler(relevancyEnabled),
-		watchDispatcher:       watchDispatcher,
 	}
 }
 
@@ -123,6 +121,8 @@ func (h *ResourcesCleanupHandler) StartCleanupTask(ctx context.Context) {
 						err = migrateToGob[softwarecomposition.ApplicationActivity](h.appFs, path)
 					case "applicationprofiles":
 						err = migrateToGob[softwarecomposition.ApplicationProfile](h.appFs, path)
+					case "networkneighborses":
+						err = migrateToGob[softwarecomposition.NetworkNeighbors](h.appFs, path)
 					case "networkneighborhoods":
 						err = migrateToGob[softwarecomposition.NetworkNeighborhood](h.appFs, path)
 					case "openvulnerabilityexchangecontainers":
@@ -173,11 +173,7 @@ func (h *ResourcesCleanupHandler) StartCleanupTask(ctx context.Context) {
 					logger.L().Debug("deleting", helpers.String("kind", resourceKind), helpers.String("namespace", metadata.Namespace), helpers.String("name", metadata.Name))
 					h.deleteFunc(h.appFs, path)
 
-					metaOut := h.deleteMetadata(path)
-					if h.watchDispatcher != nil {
-						key := path[len(h.root) : len(path)-len(file.GobExt)]
-						h.watchDispatcher.Deleted(key, metaOut)
-					}
+					h.deleteMetadata(path)
 				}
 				return nil
 			})
@@ -265,13 +261,13 @@ func deleteByTemplateHashOrWlid(_, _ string, metadata *metav1.ObjectMeta, resour
 }
 
 // deleteMissingInstanceIdAnnotation deletes resources that have missing instanceId annotation
-func deleteMissingInstanceIdAnnotation(_, _ string, metadata *metav1.ObjectMeta, _ ResourceMaps) bool {
+func deleteMissingInstanceIdAnnotation(_, _ string, metadata *metav1.ObjectMeta, resourceMaps ResourceMaps) bool {
 	_, ok := metadata.Annotations[helpersv1.InstanceIDMetadataKey]
 	return !ok
 }
 
 // deleteMissingInstanceIdAnnotation deletes resources that have missing wlid annotation
-func deleteMissingWlidAnnotation(_, _ string, metadata *metav1.ObjectMeta, _ ResourceMaps) bool {
+func deleteMissingWlidAnnotation(_, _ string, metadata *metav1.ObjectMeta, resourceMaps ResourceMaps) bool {
 	_, ok := metadata.Annotations[helpersv1.WlidMetadataKey]
 	return !ok
 }

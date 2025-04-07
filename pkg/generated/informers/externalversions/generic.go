@@ -21,7 +21,7 @@ package externalversions
 import (
 	"fmt"
 
-	v1beta1 "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1"
+	v1beta1 "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )
@@ -65,6 +65,8 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Spdx().V1beta1().KnownServers().Informer()}, nil
 	case v1beta1.SchemeGroupVersion.WithResource("networkneighborhoods"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Spdx().V1beta1().NetworkNeighborhoods().Informer()}, nil
+	case v1beta1.SchemeGroupVersion.WithResource("networkneighborses"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Spdx().V1beta1().NetworkNeighborses().Informer()}, nil
 	case v1beta1.SchemeGroupVersion.WithResource("openvulnerabilityexchangecontainers"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Spdx().V1beta1().OpenVulnerabilityExchangeContainers().Informer()}, nil
 	case v1beta1.SchemeGroupVersion.WithResource("sbomsyfts"):
