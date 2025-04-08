@@ -19,7 +19,7 @@
     "apiVersion-apps/v1/namespace-gmp-system/kind-DaemonSet/name-collector/containerName-config-reloader",
     "apiVersion-apps/v1/namespace-kube-system/kind-ReplicaSet/name-kube-dns-5bfd847c64/containerName-sidecar",
     "apiVersion-apps/v1/namespace-kube-system/kind-ReplicaSet/name-kube-dns-5bfd847c64/containerName-prometheus-to-sd",
-    "apiVersion-apps/v1/namespace-kubescape/kind-ReplicaSet/name-kubescape-b446d5885/containerName-kubescape",
+    "apiVersion-apps/v1/namespace-kubescape/kind-ReplicaSet/name-seclogic-b446d5885/containerName-seclogic",
     "apiVersion-apps/v1/namespace-kube-system/kind-ReplicaSet/name-konnectivity-agent-autoscaler-5d9dbcc6d8/containerName-autoscaler",
     "apiVersion-apps/v1/namespace-kube-system/kind-ReplicaSet/name-metrics-server-v0.5.2-6bf74b5d5f/containerName-metrics-server-nanny",
     "apiVersion-apps/v1/namespace-kube-system/kind-DaemonSet/name-fluentbit-gke/containerName-fluentbit",

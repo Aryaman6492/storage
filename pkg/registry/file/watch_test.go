@@ -99,7 +99,7 @@ func TestFileSystemStorageWatchReturnsDistinctWatchers(t *testing.T) {
 
 func TestFilesystemStorageWatchPublishing(t *testing.T) {
 	var (
-		keyN = "/spdx.softwarecomposition.seclogic.io/sbomsyfts/not-kubescape"
+		keyN = "/spdx.softwarecomposition.seclogic.io/sbomsyfts/not-seclogic"
 		keyK = "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape"
 		obj  = &v1beta1.SBOMSyft{ObjectMeta: v1.ObjectMeta{
 			Name:            "some-sbom",

@@ -2,7 +2,7 @@
   "namespace-/namespace-default": [],
   "namespace-/namespace-kube-public": [],
   "namespace-/namespace-kube-system": [],
-  "namespace-/namespace-kubescape": [],
+  "namespace-/namespace-seclogic": [],
   "namespace-/namespace-local-path-storage": [],
   "namespace-default/deployment-nginx": [
     "nginx"
@@ -163,7 +163,7 @@
     "coredns"
   ],
   "namespace-kube-system/service-kube-dns": [],
-  "namespace-kubescape/cronjob-kubescape-scheduler": [],
+  "namespace-kubescape/cronjob-seclogic-scheduler": [],
   "namespace-kubescape/cronjob-shieldvuln-scheduler": [],
   "namespace-kubescape/daemonset-node-agent": [
     "node-agent"
@@ -171,7 +171,7 @@
   "namespace-kubescape/deployment-gateway": [
     "gateway"
   ],
-  "namespace-kubescape/deployment-kubescape": [
+  "namespace-kubescape/deployment-seclogic": [
     "seclogic"
   ],
   "namespace-kubescape/deployment-shieldvuln": [
@@ -189,11 +189,11 @@
   "namespace-kubescape/deployment-synchronizer": [
     "synchronizer"
   ],
-  "namespace-kubescape/job-kubescape-scheduler-28364487": [
-    "kubescape-scheduler"
+  "namespace-kubescape/job-seclogic-scheduler-28364487": [
+    "seclogic-scheduler"
   ],
-  "namespace-kubescape/job-kubescape-scheduler-28365927": [
-    "kubescape-scheduler"
+  "namespace-kubescape/job-seclogic-scheduler-28365927": [
+    "seclogic-scheduler"
   ],
   "namespace-kubescape/job-shieldvuln-scheduler-28365272": [
     "shieldvuln-scheduler"
@@ -204,11 +204,11 @@
   "namespace-kubescape/pod-gateway-776ff9b5c8-2c6z8": [],
   "namespace-kubescape/pod-gateway-7d75fdf958-t7vv6": [],
   "namespace-kubescape/pod-kollector-0": [],
-  "namespace-kubescape/pod-kubescape-5dbdd4b789-vk8wk": [],
-  "namespace-kubescape/pod-kubescape-7c5cc7c59f-ltznw": [],
-  "namespace-kubescape/pod-kubescape-7c696586b4-d2m78": [],
-  "namespace-kubescape/pod-kubescape-scheduler-28364487-9n8vj": [],
-  "namespace-kubescape/pod-kubescape-scheduler-28365927-qcsgl": [],
+  "namespace-kubescape/pod-seclogic-5dbdd4b789-vk8wk": [],
+  "namespace-kubescape/pod-seclogic-7c5cc7c59f-ltznw": [],
+  "namespace-kubescape/pod-seclogic-7c696586b4-d2m78": [],
+  "namespace-kubescape/pod-seclogic-scheduler-28364487-9n8vj": [],
+  "namespace-kubescape/pod-seclogic-scheduler-28365927-qcsgl": [],
   "namespace-kubescape/pod-shieldvuln-54fcf9d75f-cqkj8": [],
   "namespace-kubescape/pod-shieldvuln-8f7b77794-tshxk": [],
   "namespace-kubescape/pod-shieldvuln-scheduler-28365272-l4kr9": [],
@@ -228,16 +228,16 @@
   "namespace-kubescape/replicaset-gateway-7d75fdf958": [
     "gateway"
   ],
-  "namespace-kubescape/replicaset-kubescape-5dbdd4b789": [
+  "namespace-kubescape/replicaset-seclogic-5dbdd4b789": [
     "seclogic"
   ],
-  "namespace-kubescape/replicaset-kubescape-7c5cc7c59f": [
+  "namespace-kubescape/replicaset-seclogic-7c5cc7c59f": [
     "seclogic"
   ],
-  "namespace-kubescape/replicaset-kubescape-7c696586b4": [
+  "namespace-kubescape/replicaset-seclogic-7c696586b4": [
     "seclogic"
   ],
-  "namespace-kubescape/replicaset-kubescape-d4459d6cd": [
+  "namespace-kubescape/replicaset-seclogic-d4459d6cd": [
     "seclogic"
   ],
   "namespace-kubescape/replicaset-shieldvuln-54fcf9d75f": [
@@ -268,7 +268,7 @@
     "synchronizer"
   ],
   "namespace-kubescape/service-gateway": [],
-  "namespace-kubescape/service-kubescape": [],
+  "namespace-kubescape/service-seclogic": [],
   "namespace-kubescape/service-shieldvuln": [],
   "namespace-kubescape/service-operator": [],
   "namespace-kubescape/service-otel-collector": [],

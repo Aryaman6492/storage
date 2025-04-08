@@ -20,10 +20,10 @@ spec:
     identifier: bla
     namespaceSelector:
         matchLabels:
-          name: kubescape
+          name: seclogic
     podSelector:
         matchLabels:
-          app: kubescape-ui
+          app: seclogic-ui
     ports:
     -   name: TCP-6379
         protocol: TCP

@@ -1,6 +1,6 @@
 # Kubescape Storage
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkubescape%2Fstorage.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkubescape%2Fstorage?ref=badge_shield&issueType=license)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fseclogic%2Fstorage.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fseclogic%2Fstorage?ref=badge_shield&issueType=license)
 
 
 An Aggregated APIServer for the Kubescape internal storage services.
@@ -319,7 +319,7 @@ This will expose the profiling endpoints on the `/debug/pprof` path.
 To access the profiling endpoints, you have to port-forward the Storage APIServer pod and generate a token:
 
 ```shell
-kubectl port-forward -n kubescape svc/storage 8443:443
+kubectl port-forward -n seclogic svc/storage 8443:443
 ```
 
 ```shell

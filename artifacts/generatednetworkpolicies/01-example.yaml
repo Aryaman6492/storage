@@ -5,7 +5,7 @@ metadata:
     seclogic.io/workload-api-version: v1
     seclogic.io/workload-kind: deployment
     seclogic.io/workload-name: nginx
-    seclogic.io/workload-namespace: kubescape
+    seclogic.io/workload-namespace: seclogic
   name: deployment-nginx
   namespace: default
 policyRef:
@@ -18,7 +18,7 @@ spec:
   kind: NetworkPolicy
   metadata:
     annotations:
-      generated-by: kubescape
+      generated-by: seclogic
     name: deployment-nginx
     namespace: default
   spec:
@@ -33,10 +33,10 @@ spec:
     - from:
       - namespaceSelector:
           matchLabels:
-            name: kubescape
+            name: seclogic
         podSelector:
           matchLabels:
-            app: kubescape-ui
+            app: seclogic-ui
       ports:
       - port: 6379
         protocol: TCP
