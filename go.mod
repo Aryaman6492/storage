@@ -9,7 +9,7 @@ toolchain go1.23.3
 require (
 	github.com/SergJa/jsonhash v0.0.0-20210531165746-fc45f346aa74
 	github.com/anchore/syft v1.3.0
-	github.com/armosec/utils-k8s-go v0.0.26
+	github.com/Aryaman6492/utils-k8s-go v0.0.26
 	github.com/containers/common v0.60.4
 	github.com/deckarep/golang-set/v2 v2.6.0
 	github.com/dghubble/trie v0.1.0
@@ -42,6 +42,7 @@ require (
 	k8s.io/utils v0.0.0-20230726121419-3b25d923346b
 	zombiezen.com/go/sqlite v1.4.0
 )
+replace github.com/Aryaman6492/utils-k8s-go => /home/ripeey/Desktop/cqs-sensor/copycon/utils-k8s-go
 
 require (
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect

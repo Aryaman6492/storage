@@ -24,7 +24,7 @@ import (
 	"path/filepath"
 	"time"
 
-	utilsmetadata "github.com/armosec/utils-k8s-go/armometadata"
+	utilsmetadata "github.com/Aryaman6492/utils-k8s-go/armometadata"
 	"github.com/go-logr/zapr"
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"

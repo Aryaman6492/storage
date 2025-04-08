@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	wlidPkg "github.com/armosec/utils-k8s-go/wlid"
+	wlidPkg "github.com/Aryaman6492/utils-k8s-go/wlid"
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"
 	helpersv1 "github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"

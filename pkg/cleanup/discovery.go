@@ -9,7 +9,7 @@ import (
 
 	"k8s.io/client-go/discovery"
 
-	wlidPkg "github.com/armosec/utils-k8s-go/wlid"
+	wlidPkg "github.com/Aryaman6492/utils-k8s-go/wlid"
 	mapset "github.com/deckarep/golang-set/v2"
 	"github.com/goradd/maps"
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1"
