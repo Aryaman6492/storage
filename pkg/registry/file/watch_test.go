@@ -40,18 +40,18 @@ func TestExtractKeysToNotify(t *testing.T) {
 		},
 		{
 			"Full resource key should produce the full lineage",
-			"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/kubescape/titi",
+			"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/seclogic/titi",
 			[]string{
 				"/",
 				"/spdx.softwarecomposition.seclogic.io",
 				"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds",
-				"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/kubescape",
-				"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/kubescape/titi",
+				"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/seclogic",
+				"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/seclogic/titi",
 			},
 		},
 		{
 			"Missing leading slash should produce an error",
-			"spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/kubescape/titi",
+			"spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/seclogic/titi",
 			[]string{},
 		},
 	}
@@ -77,7 +77,7 @@ func TestFileSystemStorageWatchReturnsDistinctWatchers(t *testing.T) {
 		{
 			name: "Watch should return new watch objects for the same key for every invocation",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic",
 			},
 		},
 	}
@@ -100,7 +100,7 @@ func TestFileSystemStorageWatchReturnsDistinctWatchers(t *testing.T) {
 func TestFilesystemStorageWatchPublishing(t *testing.T) {
 	var (
 		keyN = "/spdx.softwarecomposition.seclogic.io/sbomsyfts/not-seclogic"
-		keyK = "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape"
+		keyK = "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic"
 		obj  = &v1beta1.SBOMSyft{ObjectMeta: v1.ObjectMeta{
 			Name:            "some-sbom",
 			ResourceVersion: "1",
@@ -282,17 +282,17 @@ func TestWatchGuaranteedUpdateProducesMatchingEvents(t *testing.T) {
 		{
 			name: "Successful GuaranteedUpdate should produce a matching Modified event",
 			inputWatchesByKey: map[string]int{
-				"/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape": 1,
+				"/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic": 1,
 			},
 			args: args{
-				key:            "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key:            "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				ignoreNotFound: true,
 				tryUpdate: func(input runtime.Object, res storage.ResponseMeta) (runtime.Object, *uint64, error) {
 					return toto, nil, nil
 				},
 			},
 			expectedEvents: map[string][]watch.Event{
-				"/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape": {
+				"/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic": {
 					{
 						Type:   watch.Modified,
 						Object: toto,

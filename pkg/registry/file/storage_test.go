@@ -28,9 +28,9 @@ func getStoredPayloadFilepath(root, key string) string {
 func TestStorageImpl_Count(t *testing.T) {
 	keys := []string{
 		"/other/type/ns/titi",
-		"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/kubescape/titi",
+		"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/seclogic/titi",
 		"/spdx.softwarecomposition.seclogic.io/sbomsyftfiltereds/other/toto",
-		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/other/toto",
 	}
 	tests := []struct {
@@ -41,12 +41,12 @@ func TestStorageImpl_Count(t *testing.T) {
 	}{
 		{
 			name: "one object",
-			key:  "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+			key:  "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 			want: 1,
 		},
 		{
 			name: "one ns",
-			key:  "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape",
+			key:  "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic",
 			want: 1,
 		},
 		{
@@ -101,7 +101,7 @@ func TestStorageImpl_Create(t *testing.T) {
 			name:     "readonly fs",
 			readonly: true,
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				obj: &v1beta1.SBOMSyft{},
 			},
 			wantErr: true,
@@ -109,7 +109,7 @@ func TestStorageImpl_Create(t *testing.T) {
 		{
 			name: "object",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				obj: &v1beta1.SBOMSyft{
 					ObjectMeta: v1.ObjectMeta{
 						Name: "toto",
@@ -120,7 +120,7 @@ func TestStorageImpl_Create(t *testing.T) {
 		{
 			name: "object and out",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				obj: &v1beta1.SBOMSyft{
 					ObjectMeta: v1.ObjectMeta{
 						Name:          "toto",
@@ -203,13 +203,13 @@ func TestStorageImpl_Delete(t *testing.T) {
 		{
 			name: "not found",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 			},
 		},
 		{
 			name: "empty object",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				out: &v1beta1.SBOMSyft{},
 			},
 			content: &empty,
@@ -219,7 +219,7 @@ func TestStorageImpl_Delete(t *testing.T) {
 		{
 			name: "real object",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				out: &v1beta1.SBOMSyft{},
 			},
 			content: &toto,
@@ -300,14 +300,14 @@ func TestStorageImpl_Get(t *testing.T) {
 		{
 			name: "not found",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 			},
 			wantErr: isNotFoundError,
 		},
 		{
 			name: "empty string",
 			args: args{
-				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				objPtr: &v1beta1.SBOMSyft{},
 			},
 			create:  true,
@@ -316,7 +316,7 @@ func TestStorageImpl_Get(t *testing.T) {
 		{
 			name: "empty object",
 			args: args{
-				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				objPtr: &v1beta1.SBOMSyft{},
 			},
 			content: emptyObj.Bytes(),
@@ -327,7 +327,7 @@ func TestStorageImpl_Get(t *testing.T) {
 		{
 			name: "real object",
 			args: args{
-				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				objPtr: &v1beta1.SBOMSyft{},
 			},
 			content: realObj.Bytes(),
@@ -348,7 +348,7 @@ func TestStorageImpl_Get(t *testing.T) {
 		{
 			name: "real object - metadata only",
 			args: args{
-				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				objPtr: &v1beta1.SBOMSyft{},
 				opts:   storage.GetOptions{ResourceVersion: "metadata"},
 			},
@@ -364,7 +364,7 @@ func TestStorageImpl_Get(t *testing.T) {
 		{
 			name: "truncated object",
 			args: args{
-				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key:    "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				objPtr: &v1beta1.SBOMSyft{},
 			},
 			content: realObj.Bytes()[10:10],
@@ -400,13 +400,13 @@ func TestStorageImpl_Get(t *testing.T) {
 
 func TestStorageImpl_GetList(t *testing.T) {
 	objs := map[string]runtime.Object{
-		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto": &v1beta1.SBOMSyft{
+		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto": &v1beta1.SBOMSyft{
 			ObjectMeta: v1.ObjectMeta{
 				Name:      "toto",
 				Namespace: "seclogic",
 			},
 		},
-		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/titi": &v1beta1.SBOMSyft{
+		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/titi": &v1beta1.SBOMSyft{
 			ObjectMeta: v1.ObjectMeta{
 				Name:      "titi",
 				Namespace: "seclogic",
@@ -432,7 +432,7 @@ func TestStorageImpl_GetList(t *testing.T) {
 		{
 			name: "get ns",
 			args: args{
-				key:     "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape",
+				key:     "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic",
 				listObj: &v1beta1.SBOMSyftList{},
 			},
 			want: 2,
@@ -540,7 +540,7 @@ func TestStorageImpl_GuaranteedUpdate(t *testing.T) {
 		{
 			name: "test",
 			args: args{
-				key:            "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key:            "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				ignoreNotFound: true,
 				tryUpdate: func(input runtime.Object, res storage.ResponseMeta) (runtime.Object, *uint64, error) {
 					return toto.DeepCopyObject(), nil, nil
@@ -551,7 +551,7 @@ func TestStorageImpl_GuaranteedUpdate(t *testing.T) {
 		{
 			name: "test with existing object",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				tryUpdate: func(input runtime.Object, res storage.ResponseMeta) (runtime.Object, *uint64, error) {
 					obj := *input.(*v1beta1.SBOMSyft)
 					obj.Spec.Metadata.Tool.Name = "tutu"
@@ -564,7 +564,7 @@ func TestStorageImpl_GuaranteedUpdate(t *testing.T) {
 		{
 			name: "test with existing object, no change",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				tryUpdate: func(input runtime.Object, res storage.ResponseMeta) (runtime.Object, *uint64, error) {
 					return input, nil, nil
 				},
@@ -575,7 +575,7 @@ func TestStorageImpl_GuaranteedUpdate(t *testing.T) {
 		{
 			name: "test with failing precondition",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				preconditions: &storage.Preconditions{
 					ResourceVersion: ptr.To("v123"),
 				},
@@ -586,7 +586,7 @@ func TestStorageImpl_GuaranteedUpdate(t *testing.T) {
 		{
 			name: "test with failing tryUpdate",
 			args: args{
-				key:            "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto",
+				key:            "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto",
 				ignoreNotFound: true,
 				tryUpdate: func(input runtime.Object, res storage.ResponseMeta) (runtime.Object, *uint64, error) {
 					if count == 0 {
@@ -664,7 +664,7 @@ func BenchmarkWriteFiles(b *testing.B) {
 		_ = pool.Close()
 	}(pool)
 	s := NewStorageImpl(afero.NewMemMapFs(), DefaultStorageRoot, pool, nil).(*StorageImpl)
-	key := "/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto"
+	key := "/spdx.softwarecomposition.seclogic.io/sbomsyfts/seclogic/toto"
 	obj := &v1beta1.SBOMSyft{
 		ObjectMeta: v1.ObjectMeta{
 			Name: "toto",

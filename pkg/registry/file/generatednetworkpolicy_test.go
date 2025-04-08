@@ -34,14 +34,14 @@ func TestGeneratedNetworkPolicyStorage_Get(t *testing.T) {
 		{
 			name: "no existing objects return empty list",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/generatednetworkpolicies/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/generatednetworkpolicies/seclogic/toto",
 			},
-			expectedError: storage.NewKeyNotFoundError("/spdx.softwarecomposition.seclogic.io/networkneighborhoods/kubescape/toto", 0),
+			expectedError: storage.NewKeyNotFoundError("/spdx.softwarecomposition.seclogic.io/networkneighborhoods/seclogic/toto", 0),
 		},
 		{
 			name: "existing object is returned",
 			args: args{
-				key:    "/spdx.softwarecomposition.seclogic.io/generatednetworkpolicies/kubescape/toto",
+				key:    "/spdx.softwarecomposition.seclogic.io/generatednetworkpolicies/seclogic/toto",
 				objPtr: &softwarecomposition.GeneratedNetworkPolicy{},
 			},
 			expectedError: nil,
@@ -89,7 +89,7 @@ func TestGeneratedNetworkPolicyStorage_Get(t *testing.T) {
 		{
 			name: "missing workload name label",
 			args: args{
-				key:    "/spdx.softwarecomposition.seclogic.io/generatednetworkpolicies/kubescape/toto",
+				key:    "/spdx.softwarecomposition.seclogic.io/generatednetworkpolicies/seclogic/toto",
 				objPtr: &softwarecomposition.GeneratedNetworkPolicy{},
 			},
 			expectedError:  nil,
@@ -168,7 +168,7 @@ func TestGeneratedNetworkPolicyStorage_Get(t *testing.T) {
 				if tt.noWorkloadName {
 					delete(wlObj.ObjectMeta.Labels, helpersv1.NameMetadataKey)
 				}
-				err := realStorage.Create(context.TODO(), "/spdx.softwarecomposition.seclogic.io/networkneighborhoods/kubescape/toto", wlObj, nil, 0)
+				err := realStorage.Create(context.TODO(), "/spdx.softwarecomposition.seclogic.io/networkneighborhoods/seclogic/toto", wlObj, nil, 0)
 				assert.NoError(t, err)
 			}
 

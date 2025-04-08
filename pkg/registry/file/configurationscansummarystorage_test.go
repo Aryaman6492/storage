@@ -89,14 +89,14 @@ func TestConfigurationScanSummaryStorage_Get(t *testing.T) {
 		{
 			name: "no existing objects return empty list",
 			args: args{
-				key: "/spdx.softwarecomposition.seclogic.io/configurationscansummaries/kubescape/toto",
+				key: "/spdx.softwarecomposition.seclogic.io/configurationscansummaries/seclogic/toto",
 			},
-			expectedError: storage.NewKeyNotFoundError("/spdx.softwarecomposition.seclogic.io/configurationscansummaries/kubescape/toto", 0),
+			expectedError: storage.NewKeyNotFoundError("/spdx.softwarecomposition.seclogic.io/configurationscansummaries/seclogic/toto", 0),
 		},
 		{
 			name: "existing object is returned",
 			args: args{
-				key:    "/spdx.softwarecomposition.seclogic.io/configurationscansummaries/kubescape",
+				key:    "/spdx.softwarecomposition.seclogic.io/configurationscansummaries/seclogic",
 				objPtr: &v1beta1.ConfigurationScanSummary{},
 			},
 			expectedError: nil,
@@ -125,7 +125,7 @@ func TestConfigurationScanSummaryStorage_Get(t *testing.T) {
 
 			if tt.create {
 				wlObj := &softwarecomposition.WorkloadConfigurationScanSummary{}
-				_ = realStorage.Create(context.TODO(), "/spdx.softwarecomposition.seclogic.io/workloadconfigurationscansummaries/kubescape/toto", wlObj, nil, 0)
+				_ = realStorage.Create(context.TODO(), "/spdx.softwarecomposition.seclogic.io/workloadconfigurationscansummaries/seclogic/toto", wlObj, nil, 0)
 			}
 
 			err := configScanSummaryStorage.Get(context.TODO(), tt.args.key, tt.args.opts, tt.args.objPtr)
@@ -198,7 +198,7 @@ func TestConfigurationScanSummaryStorage_GetList(t *testing.T) {
 
 			if tt.create {
 				wlObj := &softwarecomposition.WorkloadConfigurationScanSummary{}
-				_ = realStorage.Create(context.TODO(), "/spdx.softwarecomposition.seclogic.io/workloadconfigurationscansummaries/kubescape/toto", wlObj, nil, 0)
+				_ = realStorage.Create(context.TODO(), "/spdx.softwarecomposition.seclogic.io/workloadconfigurationscansummaries/seclogic/toto", wlObj, nil, 0)
 			}
 
 			err := configScanSummaryStorage.GetList(context.TODO(), tt.args.key, tt.args.opts, tt.args.objPtr)
