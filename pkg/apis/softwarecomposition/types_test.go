@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition/consts"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/consts"
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

@@ -17,8 +17,8 @@ limitations under the License.
 package applicationactivity
 
 import (
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	"github.com/kubescape/storage/pkg/registry"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/registry"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apiserver/pkg/registry/generic"
 	genericregistry "k8s.io/apiserver/pkg/registry/generic/registry"

@@ -15,11 +15,11 @@
             "seclogic.io/workload-api-version": "v1",
             "seclogic.io/workload-kind": "Deployment",
             "seclogic.io/workload-name": "operator",
-            "seclogic.io/workload-namespace": "kubescape",
+            "seclogic.io/workload-namespace": "seclogic",
             "seclogic.io/workload-resource-version": "5358810"
         },
         "name": "replicaset-operator-55df98fc6d",
-        "namespace": "kubescape",
+        "namespace": "seclogic",
         "resourceVersion": "1",
         "uid": "98333be8-c05a-49ff-b0ff-fe029060b241"
     },
@@ -73,7 +73,7 @@
                         "namespaceSelector": null,
                         "podSelector": {
                             "matchLabels": {
-                                "app": "kubescape"
+                                "app": "seclogic"
                             }
                         },
                         "ports": [
@@ -113,7 +113,7 @@
                         "namespaceSelector": null,
                         "podSelector": {
                             "matchLabels": {
-                                "app": "kubevuln"
+                                "app": "shieldvuln"
                             }
                         },
                         "ports": [
@@ -296,7 +296,7 @@
         "ephemeralContainers": null,
         "initContainers": null,
         "matchLabels": {
-            "app.kubernetes.io/instance": "kubescape",
+            "app.kubernetes.io/instance": "seclogic",
             "app.kubernetes.io/name": "operator",
             "tier": "ks-control-plane"
         }

@@ -11,8 +11,8 @@ import (
 	"strings"
 
 	helpersv1 "github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition/networkpolicy"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/networkpolicy"
 
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"
@@ -44,7 +44,7 @@ func GenerateNetworkPolicy(nn *softwarecomposition.NetworkNeighborhood, knownSer
 			Name:      fmt.Sprintf("%s-%s", strings.ToLower(kind), name),
 			Namespace: nn.Namespace,
 			Annotations: map[string]string{
-				"generated-by": "kubescape",
+				"generated-by": "seclogic",
 			},
 			Labels: nn.Labels,
 		},

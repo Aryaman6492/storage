@@ -13,8 +13,8 @@ import (
 
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition/packagemetadata"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition/sourcemetadata"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/packagemetadata"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/sourcemetadata"
 )
 
 type Digest struct {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	types "github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	types "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
 )
 
 // PrintIdentifiedCallStack prints the entire identified call stack

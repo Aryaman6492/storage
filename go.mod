@@ -1,6 +1,6 @@
 // This is a generated file. Do not edit directly.
 
-module github.com/kubescape/storage
+module github.com/Aryaman6492/storage
 
 go 1.22.5
 

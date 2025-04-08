@@ -29,7 +29,7 @@
     "apiVersion-apps/v1/namespace-gmp-system/kind-StatefulSet/name-alertmanager/containerName-alertmanager",
     "apiVersion-apps/v1/namespace-kube-system/kind-DaemonSet/name-fluentbit-gke/containerName-fluentbit-gke",
     "apiVersion-apps/v1/namespace-kube-system/kind-DaemonSet/name-pdcsi-node/containerName-csi-driver-registrar",
-    "apiVersion-apps/v1/namespace-kubescape/kind-ReplicaSet/name-kubevuln-866f56f7/containerName-kubevuln",
+    "apiVersion-apps/v1/namespace-kubescape/kind-ReplicaSet/name-shieldvuln-866f56f7/containerName-shieldvuln",
     "apiVersion-apps/v1/namespace-gmp-system/kind-DaemonSet/name-collector/containerName-prometheus",
     "apiVersion-apps/v1/namespace-kube-system/kind-ReplicaSet/name-event-exporter-gke-7bf6c99dcb/containerName-event-exporter"
 ]

@@ -5,11 +5,11 @@ import (
 	"testing"
 
 	helpersv1 "github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/kubescape/storage/pkg/generated/clientset/versioned/scheme"
+	"github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/scheme"
 	"github.com/stretchr/testify/require"
 	"zombiezen.com/go/sqlite/sqlitemigration"
 
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -53,7 +53,7 @@ func TestGeneratedNetworkPolicyStorage_Get(t *testing.T) {
 				},
 				ObjectMeta: v1.ObjectMeta{
 					Name:              "toto",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					CreationTimestamp: v1.Time{},
 					Labels: map[string]string{
 						helpersv1.KindMetadataKey: "Deployment",
@@ -65,10 +65,10 @@ func TestGeneratedNetworkPolicyStorage_Get(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: v1.ObjectMeta{
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 						Name:      "deployment-totowl",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Labels: map[string]string{
 							helpersv1.KindMetadataKey: "Deployment",
 							helpersv1.NameMetadataKey: "totowl",
@@ -102,7 +102,7 @@ func TestGeneratedNetworkPolicyStorage_Get(t *testing.T) {
 				},
 				ObjectMeta: v1.ObjectMeta{
 					Name:              "toto",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					CreationTimestamp: v1.Time{},
 					Labels: map[string]string{
 						helpersv1.KindMetadataKey: "Deployment",
@@ -113,10 +113,10 @@ func TestGeneratedNetworkPolicyStorage_Get(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: v1.ObjectMeta{
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 						Name:      "deployment-toto",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Labels: map[string]string{
 							helpersv1.KindMetadataKey: "Deployment",
 						},
@@ -155,7 +155,7 @@ func TestGeneratedNetworkPolicyStorage_Get(t *testing.T) {
 					},
 					ObjectMeta: v1.ObjectMeta{
 						Name:      "toto",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
 							helpersv1.StatusMetadataKey: helpersv1.Ready,
 						},

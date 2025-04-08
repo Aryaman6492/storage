@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/kubescape/storage/pkg/registry/file/dynamicpathdetector"
+	"github.com/Aryaman6492/storage/pkg/registry/file/dynamicpathdetector"
 	"github.com/stretchr/testify/assert"
 )
 

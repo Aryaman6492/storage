@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1"
-	"github.com/kubescape/storage/pkg/generated/clientset/versioned/scheme"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1"
+	"github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/scheme"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -403,13 +403,13 @@ func TestStorageImpl_GetList(t *testing.T) {
 		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/toto": &v1beta1.SBOMSyft{
 			ObjectMeta: v1.ObjectMeta{
 				Name:      "toto",
-				Namespace: "kubescape",
+				Namespace: "seclogic",
 			},
 		},
 		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/kubescape/titi": &v1beta1.SBOMSyft{
 			ObjectMeta: v1.ObjectMeta{
 				Name:      "titi",
-				Namespace: "kubescape",
+				Namespace: "seclogic",
 			},
 		},
 		"/spdx.softwarecomposition.seclogic.io/sbomsyfts/other/tata": &v1beta1.SBOMSyft{

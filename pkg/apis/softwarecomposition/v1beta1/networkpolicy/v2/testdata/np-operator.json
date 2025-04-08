@@ -8,11 +8,11 @@
             "seclogic.io/workload-api-version": "v1",
             "seclogic.io/workload-kind": "Deployment",
             "seclogic.io/workload-name": "operator",
-            "seclogic.io/workload-namespace": "kubescape",
+            "seclogic.io/workload-namespace": "seclogic",
             "seclogic.io/workload-resource-version": "5358810"
         },
         "name": "replicaset-operator-55df98fc6d",
-        "namespace": "kubescape"
+        "namespace": "seclogic"
     },
     "policyRef": [
         {
@@ -49,7 +49,7 @@
         "kind": "NetworkPolicy",
         "metadata": {
             "annotations": {
-                "generated-by": "kubescape"
+                "generated-by": "seclogic"
             },
             "creationTimestamp": null,
             "labels": {
@@ -57,11 +57,11 @@
                 "seclogic.io/workload-api-version": "v1",
                 "seclogic.io/workload-kind": "Deployment",
                 "seclogic.io/workload-name": "operator",
-                "seclogic.io/workload-namespace": "kubescape",
+                "seclogic.io/workload-namespace": "seclogic",
                 "seclogic.io/workload-resource-version": "5358810"
             },
             "name": "deployment-operator",
-            "namespace": "kubescape"
+            "namespace": "seclogic"
         },
         "spec": {
             "ingress": [
@@ -213,7 +213,7 @@
                         {
                             "podSelector": {
                                 "matchLabels": {
-                                    "app": "kubevuln"
+                                    "app": "shieldvuln"
                                 }
                             }
                         }
@@ -230,7 +230,7 @@
                         {
                             "podSelector": {
                                 "matchLabels": {
-                                    "app": "kubescape"
+                                    "app": "seclogic"
                                 }
                             }
                         }
@@ -267,7 +267,7 @@
             ],
             "podSelector": {
                 "matchLabels": {
-                    "app.kubernetes.io/instance": "kubescape",
+                    "app.kubernetes.io/instance": "seclogic",
                     "app.kubernetes.io/name": "operator",
                     "tier": "ks-control-plane"
                 }

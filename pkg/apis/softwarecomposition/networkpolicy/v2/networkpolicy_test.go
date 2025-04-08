@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	helpersv1 "github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -32,7 +32,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-nginx",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: helpersv1.Ready,
 					},
@@ -76,7 +76,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 				},
 				ObjectMeta: metav1.ObjectMeta{
 					Name:              "deployment-nginx",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					Labels:            nil,
 					CreationTimestamp: timeProvider,
 				},
@@ -86,9 +86,9 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      "deployment-nginx",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 					},
 					Spec: softwarecomposition.NetworkPolicySpec{
@@ -131,7 +131,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-nginx",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: "not-ready",
 					},
@@ -150,7 +150,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-multi",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: helpersv1.Ready,
 					},
@@ -215,7 +215,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 				},
 				ObjectMeta: metav1.ObjectMeta{
 					Name:              "deployment-multi",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					CreationTimestamp: timeProvider,
 				},
 				Spec: softwarecomposition.NetworkPolicy{
@@ -223,9 +223,9 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      "deployment-multi",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 					},
 					Spec: softwarecomposition.NetworkPolicySpec{
@@ -294,7 +294,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-known-servers",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: helpersv1.Ready,
 					},
@@ -364,7 +364,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 				},
 				ObjectMeta: metav1.ObjectMeta{
 					Name:              "deployment-known-servers",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					CreationTimestamp: timeProvider,
 				},
 				Spec: softwarecomposition.NetworkPolicy{
@@ -372,9 +372,9 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      "deployment-known-servers",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 					},
 					Spec: softwarecomposition.NetworkPolicySpec{
@@ -445,7 +445,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-known-servers",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: helpersv1.Ready,
 					},
@@ -515,7 +515,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 				},
 				ObjectMeta: metav1.ObjectMeta{
 					Name:              "deployment-known-servers",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					CreationTimestamp: timeProvider,
 				},
 				Spec: softwarecomposition.NetworkPolicy{
@@ -523,9 +523,9 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      "deployment-known-servers",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 					},
 					Spec: softwarecomposition.NetworkPolicySpec{
@@ -596,7 +596,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-dns",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: helpersv1.Ready,
 					},
@@ -638,7 +638,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 				},
 				ObjectMeta: metav1.ObjectMeta{
 					Name:              "deployment-dns",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					CreationTimestamp: timeProvider,
 				},
 				PoliciesRef: []softwarecomposition.PolicyRef{
@@ -653,9 +653,9 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      "deployment-dns",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 					},
 					Spec: softwarecomposition.NetworkPolicySpec{
@@ -696,7 +696,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-multi-container",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: helpersv1.Ready,
 					},
@@ -758,7 +758,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 				},
 				ObjectMeta: metav1.ObjectMeta{
 					Name:              "deployment-multi-container",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					Labels:            nil,
 					CreationTimestamp: timeProvider,
 				},
@@ -768,9 +768,9 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      "deployment-multi-container",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 					},
 					Spec: softwarecomposition.NetworkPolicySpec{
@@ -830,7 +830,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-multi-containers",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: helpersv1.Ready,
 					},
@@ -915,7 +915,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 				},
 				ObjectMeta: metav1.ObjectMeta{
 					Name:              "deployment-multi-containers",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					CreationTimestamp: timeProvider,
 				},
 				PoliciesRef: []softwarecomposition.PolicyRef{},
@@ -924,9 +924,9 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      "deployment-multi-containers",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 					},
 					Spec: softwarecomposition.NetworkPolicySpec{
@@ -987,7 +987,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 			networkNeighborhood: softwarecomposition.NetworkNeighborhood{
 				ObjectMeta: metav1.ObjectMeta{
 					Name:      "deployment-multi-containers",
-					Namespace: "kubescape",
+					Namespace: "seclogic",
 					Annotations: map[string]string{
 						helpersv1.StatusMetadataKey: helpersv1.Ready,
 					},
@@ -1206,7 +1206,7 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 				},
 				ObjectMeta: metav1.ObjectMeta{
 					Name:              "deployment-multi-containers",
-					Namespace:         "kubescape",
+					Namespace:         "seclogic",
 					CreationTimestamp: timeProvider,
 				},
 				PoliciesRef: []softwarecomposition.PolicyRef{},
@@ -1215,9 +1215,9 @@ func TestGenerateNetworkPolicy(t *testing.T) {
 					APIVersion: "networking.k8s.io/v1",
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      "deployment-multi-containers",
-						Namespace: "kubescape",
+						Namespace: "seclogic",
 						Annotations: map[string]string{
-							"generated-by": "kubescape",
+							"generated-by": "seclogic",
 						},
 					},
 					Spec: softwarecomposition.NetworkPolicySpec{

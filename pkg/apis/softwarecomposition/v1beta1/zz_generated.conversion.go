@@ -26,8 +26,8 @@ import (
 	unsafe "unsafe"
 
 	seccomp "github.com/containers/common/pkg/seccomp"
-	softwarecomposition "github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	consts "github.com/kubescape/storage/pkg/apis/softwarecomposition/consts"
+	softwarecomposition "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	consts "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/consts"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	conversion "k8s.io/apimachinery/pkg/conversion"

@@ -34,16 +34,16 @@ cd ~/github.com/kubescape
 > [!WARNING]
 > Due to the specifics of the code generation script `hack/update-codegen.sh`,
 > your working directory should always match your module path. That is,
-> `~/github.com/kubescape/storage` for this specific repo. If the directories
+> `~/github.com/Aryaman6492/storage` for this specific repo. If the directories
 > don’t match and you store code in some other directory, you will write code
 > in whatever directory you chose, but once you run codegen, it will generate
-> the code only in `~/github.com/kubescape/storage`.
+> the code only in `~/github.com/Aryaman6492/storage`.
 
 Once you have a working directory set up, issue the following
 commands in your working directory.
 
 ```sh
-git clone https://github.com/kubescape/storage.git
+git clone https://github.com/Aryaman6492/storage.git
 cd storage
 ```
 
@@ -145,9 +145,9 @@ Now it's time to generate the protobuf code:
 ```
 docker buildx build --file build/protoc.Dockerfile --platform linux/amd64 --tag protoc --load .
 docker run --rm -it -v "$(pwd):/work" protoc
-mkdir -p github.com/kubescape/storage
-ln -sf /work/pkg github.com/kubescape/storage/
-/go/bin/go-to-protobuf --packages=github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1 --go-header-file=./hack/boilerplate.go.txt --apimachinery-packages='-k8s.io/apimachinery/pkg/util/intstr,-k8s.io/apimachinery/pkg/api/resource,-k8s.io/apimachinery/pkg/runtime/schema,-k8s.io/apimachinery/pkg/runtime,-k8s.io/apimachinery/pkg/apis/meta/v1,-k8s.io/apimachinery/pkg/apis/meta/v1beta1,-k8s.io/api/core/v1,-k8s.io/api/rbac/v1' --proto-import=/go/src/k8s.io/kubernetes/staging/src/ --proto-import=/go/src/k8s.io/kubernetes/vendor
+mkdir -p github.com/Aryaman6492/storage
+ln -sf /work/pkg github.com/Aryaman6492/storage/
+/go/bin/go-to-protobuf --packages=github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1 --go-header-file=./hack/boilerplate.go.txt --apimachinery-packages='-k8s.io/apimachinery/pkg/util/intstr,-k8s.io/apimachinery/pkg/api/resource,-k8s.io/apimachinery/pkg/runtime/schema,-k8s.io/apimachinery/pkg/runtime,-k8s.io/apimachinery/pkg/apis/meta/v1,-k8s.io/apimachinery/pkg/apis/meta/v1beta1,-k8s.io/api/core/v1,-k8s.io/api/rbac/v1' --proto-import=/go/src/k8s.io/kubernetes/staging/src/ --proto-import=/go/src/k8s.io/kubernetes/vendor
 ```
 
 Once the code generation finishes successfully, you should be able to run tests and build the binary with no errors:
@@ -309,7 +309,7 @@ only this superuser group is authorized.
 
 ## Changelog
 
-Kubescape Storage changes are tracked on the [release](https://github.com/kubescape/storage/releases) page.
+Kubescape Storage changes are tracked on the [release](https://github.com/Aryaman6492/storage/releases) page.
 
 ## Profiling
 

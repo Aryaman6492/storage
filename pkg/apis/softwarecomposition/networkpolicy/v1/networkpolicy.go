@@ -13,8 +13,8 @@ import (
 
 	helpersv1 "github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
 
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition/networkpolicy"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/networkpolicy"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -31,7 +31,7 @@ func GenerateNetworkPolicy(networkNeighbors softwarecomposition.NetworkNeighbors
 			Name:      networkNeighbors.Name,
 			Namespace: networkNeighbors.Namespace,
 			Annotations: map[string]string{
-				"generated-by": "kubescape",
+				"generated-by": "seclogic",
 			},
 			Labels: networkNeighbors.Labels,
 		},

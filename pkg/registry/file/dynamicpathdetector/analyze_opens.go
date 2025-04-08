@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	mapset "github.com/deckarep/golang-set/v2"
-	types "github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	types "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
 )
 
 func AnalyzeOpens(opens []types.OpenCalls, analyzer *PathAnalyzer, sbomSet mapset.Set[string]) ([]types.OpenCalls, error) {

@@ -164,7 +164,7 @@
   ],
   "namespace-kube-system/service-kube-dns": [],
   "namespace-kubescape/cronjob-kubescape-scheduler": [],
-  "namespace-kubescape/cronjob-kubevuln-scheduler": [],
+  "namespace-kubescape/cronjob-shieldvuln-scheduler": [],
   "namespace-kubescape/daemonset-node-agent": [
     "node-agent"
   ],
@@ -172,10 +172,10 @@
     "gateway"
   ],
   "namespace-kubescape/deployment-kubescape": [
-    "kubescape"
+    "seclogic"
   ],
-  "namespace-kubescape/deployment-kubevuln": [
-    "kubevuln"
+  "namespace-kubescape/deployment-shieldvuln": [
+    "shieldvuln"
   ],
   "namespace-kubescape/deployment-operator": [
     "operator"
@@ -195,11 +195,11 @@
   "namespace-kubescape/job-kubescape-scheduler-28365927": [
     "kubescape-scheduler"
   ],
-  "namespace-kubescape/job-kubevuln-scheduler-28365272": [
-    "kubevuln-scheduler"
+  "namespace-kubescape/job-shieldvuln-scheduler-28365272": [
+    "shieldvuln-scheduler"
   ],
-  "namespace-kubescape/job-kubevuln-scheduler-28372865": [
-    "kubevuln-scheduler"
+  "namespace-kubescape/job-shieldvuln-scheduler-28372865": [
+    "shieldvuln-scheduler"
   ],
   "namespace-kubescape/pod-gateway-776ff9b5c8-2c6z8": [],
   "namespace-kubescape/pod-gateway-7d75fdf958-t7vv6": [],
@@ -209,10 +209,10 @@
   "namespace-kubescape/pod-kubescape-7c696586b4-d2m78": [],
   "namespace-kubescape/pod-kubescape-scheduler-28364487-9n8vj": [],
   "namespace-kubescape/pod-kubescape-scheduler-28365927-qcsgl": [],
-  "namespace-kubescape/pod-kubevuln-54fcf9d75f-cqkj8": [],
-  "namespace-kubescape/pod-kubevuln-8f7b77794-tshxk": [],
-  "namespace-kubescape/pod-kubevuln-scheduler-28365272-l4kr9": [],
-  "namespace-kubescape/pod-kubevuln-scheduler-28372865-vxsj9": [],
+  "namespace-kubescape/pod-shieldvuln-54fcf9d75f-cqkj8": [],
+  "namespace-kubescape/pod-shieldvuln-8f7b77794-tshxk": [],
+  "namespace-kubescape/pod-shieldvuln-scheduler-28365272-l4kr9": [],
+  "namespace-kubescape/pod-shieldvuln-scheduler-28372865-vxsj9": [],
   "namespace-kubescape/pod-node-agent-p4cwk": [],
   "namespace-kubescape/pod-node-agent-ttql2": [],
   "namespace-kubescape/pod-operator-5d4b59474b-7b68w": [],
@@ -229,22 +229,22 @@
     "gateway"
   ],
   "namespace-kubescape/replicaset-kubescape-5dbdd4b789": [
-    "kubescape"
+    "seclogic"
   ],
   "namespace-kubescape/replicaset-kubescape-7c5cc7c59f": [
-    "kubescape"
+    "seclogic"
   ],
   "namespace-kubescape/replicaset-kubescape-7c696586b4": [
-    "kubescape"
+    "seclogic"
   ],
   "namespace-kubescape/replicaset-kubescape-d4459d6cd": [
-    "kubescape"
+    "seclogic"
   ],
-  "namespace-kubescape/replicaset-kubevuln-54fcf9d75f": [
-    "kubevuln"
+  "namespace-kubescape/replicaset-shieldvuln-54fcf9d75f": [
+    "shieldvuln"
   ],
-  "namespace-kubescape/replicaset-kubevuln-8f7b77794": [
-    "kubevuln"
+  "namespace-kubescape/replicaset-shieldvuln-8f7b77794": [
+    "shieldvuln"
   ],
   "namespace-kubescape/replicaset-operator-5d4b59474b": [
     "operator"
@@ -269,7 +269,7 @@
   ],
   "namespace-kubescape/service-gateway": [],
   "namespace-kubescape/service-kubescape": [],
-  "namespace-kubescape/service-kubevuln": [],
+  "namespace-kubescape/service-shieldvuln": [],
   "namespace-kubescape/service-operator": [],
   "namespace-kubescape/service-otel-collector": [],
   "namespace-kubescape/service-storage": [],

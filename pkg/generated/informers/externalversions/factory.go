@@ -23,9 +23,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/kubescape/storage/pkg/generated/clientset/versioned"
-	internalinterfaces "github.com/kubescape/storage/pkg/generated/informers/externalversions/internalinterfaces"
-	softwarecomposition "github.com/kubescape/storage/pkg/generated/informers/externalversions/softwarecomposition"
+	versioned "github.com/Aryaman6492/storage/pkg/generated/clientset/versioned"
+	internalinterfaces "github.com/Aryaman6492/storage/pkg/generated/informers/externalversions/internalinterfaces"
+	softwarecomposition "github.com/Aryaman6492/storage/pkg/generated/informers/externalversions/softwarecomposition"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

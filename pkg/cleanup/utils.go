@@ -12,7 +12,7 @@ import (
 
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/go-logger/helpers"
-	"github.com/kubescape/storage/pkg/registry/file"
+	"github.com/Aryaman6492/storage/pkg/registry/file"
 	"github.com/olvrng/ujson"
 	"github.com/spf13/afero"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

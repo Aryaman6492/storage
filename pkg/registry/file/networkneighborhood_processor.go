@@ -9,7 +9,7 @@ import (
 	"github.com/kubescape/go-logger"
 	loggerhelpers "github.com/kubescape/go-logger/helpers"
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 

@@ -8,7 +8,7 @@ metadata:
 spec:
   metadata:
     tool:
-      name: "kubescape"
+      name: "seclogic"
   syft:
     artifacts:
       - id: e2ba4951f152fd94

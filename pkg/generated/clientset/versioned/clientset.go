@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"net/http"
 
-	spdxv1beta1 "github.com/kubescape/storage/pkg/generated/clientset/versioned/typed/softwarecomposition/v1beta1"
+	spdxv1beta1 "github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/typed/softwarecomposition/v1beta1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

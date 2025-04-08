@@ -16,7 +16,7 @@ import (
 
 	mapset "github.com/deckarep/golang-set/v2"
 	"github.com/goradd/maps"
-	"github.com/kubescape/storage/pkg/registry/file"
+	"github.com/Aryaman6492/storage/pkg/registry/file"
 	"github.com/spf13/afero"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

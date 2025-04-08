@@ -21,7 +21,7 @@ package externalversions
 import (
 	"fmt"
 
-	v1beta1 "github.com/kubescape/storage/pkg/apis/softwarecomposition/v1beta1"
+	v1beta1 "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/v1beta1"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )

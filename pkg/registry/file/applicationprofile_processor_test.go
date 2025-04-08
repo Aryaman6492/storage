@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition/consts"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition/consts"
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -145,7 +145,7 @@ func TestApplicationProfileProcessor_PreSave(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Setenv("MAX_APPLICATION_PROFILE_SIZE", strconv.Itoa(tt.maxApplicationProfileSize))
-			a := NewApplicationProfileProcessor("kubescape")
+			a := NewApplicationProfileProcessor("seclogic")
 			tt.wantErr(t, a.PreSave(tt.object), fmt.Sprintf("PreSave(%v)", tt.object))
 			slices.Sort(tt.object.(*softwarecomposition.ApplicationProfile).Spec.Architectures)
 			assert.Equal(t, tt.want, tt.object)

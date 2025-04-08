@@ -9,7 +9,7 @@ metadata:
       "seclogic.io/workload-api-version": "v1"
       "seclogic.io/workload-name": "nginx"
       "seclogic.io/workload-kind": "deployment"
-      "seclogic.io/workload-namespace": "kubescape"
+      "seclogic.io/workload-namespace": "seclogic"
   
 spec:
   matchLabels:

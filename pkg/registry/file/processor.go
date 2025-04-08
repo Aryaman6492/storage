@@ -2,7 +2,7 @@ package file
 
 import (
 	mapset "github.com/deckarep/golang-set/v2"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
 	"k8s.io/apimachinery/pkg/runtime"
 )
 

@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	mapset "github.com/deckarep/golang-set/v2"
-	types "github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	"github.com/kubescape/storage/pkg/registry/file/dynamicpathdetector"
+	types "github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/registry/file/dynamicpathdetector"
 	"github.com/stretchr/testify/assert"
 )
 

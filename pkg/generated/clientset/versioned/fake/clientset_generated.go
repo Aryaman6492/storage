@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "github.com/kubescape/storage/pkg/generated/clientset/versioned"
-	spdxv1beta1 "github.com/kubescape/storage/pkg/generated/clientset/versioned/typed/softwarecomposition/v1beta1"
-	fakespdxv1beta1 "github.com/kubescape/storage/pkg/generated/clientset/versioned/typed/softwarecomposition/v1beta1/fake"
+	clientset "github.com/Aryaman6492/storage/pkg/generated/clientset/versioned"
+	spdxv1beta1 "github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/typed/softwarecomposition/v1beta1"
+	fakespdxv1beta1 "github.com/Aryaman6492/storage/pkg/generated/clientset/versioned/typed/softwarecomposition/v1beta1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

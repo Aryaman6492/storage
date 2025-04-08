@@ -15,8 +15,8 @@ import (
 
 	"github.com/kubescape/go-logger"
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	"github.com/kubescape/storage/pkg/utils"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/utils"
 )
 
 // NewStrategy creates and returns a applicationProfileStrategy instance

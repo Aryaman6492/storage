@@ -11,9 +11,9 @@ import (
 	loggerhelpers "github.com/kubescape/go-logger/helpers"
 	"github.com/kubescape/k8s-interface/instanceidhandler/v1/helpers"
 	"github.com/kubescape/k8s-interface/names"
-	"github.com/kubescape/storage/pkg/apis/softwarecomposition"
-	"github.com/kubescape/storage/pkg/registry/file/callstack"
-	"github.com/kubescape/storage/pkg/registry/file/dynamicpathdetector"
+	"github.com/Aryaman6492/storage/pkg/apis/softwarecomposition"
+	"github.com/Aryaman6492/storage/pkg/registry/file/callstack"
+	"github.com/Aryaman6492/storage/pkg/registry/file/dynamicpathdetector"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apiserver/pkg/storage"
 )
